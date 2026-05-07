@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subway Rahim Yar Khan</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#0d0d0d;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      background:#000;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      border-bottom:2px solid #00ff66;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:bold;
+      color:#00ff66;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#00ff66;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1512152272829-e3139592d56f?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:70px;
+      margin-bottom:20px;
+    }
+
+    .hero-content span{
+      color:#00ff66;
+    }
+
+    .hero-content p{
+      font-size:22px;
+      color:#ddd;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#00ff66;
+      color:black;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:40px;
+      transition:0.3s;
+      margin:10px;
+    }
+
+    .btn:hover{
+      background:white;
+      transform:scale(1.05);
+    }
+
+    /* ABOUT */
+
+    .about{
+      padding:100px 8%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .about-text h2{
+      font-size:50px;
+      color:#00ff66;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      font-size:18px;
+      line-height:1.8;
+      color:#ccc;
+    }
+
+    /* MENU */
+
+    .menu{
+      padding:100px 8%;
+      background:#111;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:50px;
+      color:#00ff66;
+      margin-bottom:60px;
+    }
+
+    .menu-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .menu-card{
+      background:#000;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.3s;
+      border:1px solid #222;
+    }
+
+    .menu-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .menu-card img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+    }
+
+    .menu-content{
+      padding:20px;
+    }
+
+    .menu-content h3{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:#00ff66;
+      font-size:22px;
+      margin-bottom:20px;
+      display:block;
+    }
+
+    .order-btn{
+      width:100%;
+      padding:14px;
+      border:none;
+      background:#00ff66;
+      color:black;
+      font-size:18px;
+      font-weight:bold;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .order-btn:hover{
+      background:white;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      padding:100px 8%;
+      text-align:center;
+    }
+
+    .contact h2{
+      font-size:50px;
+      color:#00ff66;
+      margin-bottom:30px;
+    }
+
+    .contact p{
+      font-size:22px;
+      color:#ccc;
+      margin:15px 0;
+    }
+
+    /* ===== ADD THIS CSS ===== */
+
+.custom-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.modal-box{
+  width:90%;
+  max-width:500px;
+  background:#111;
+  padding:35px;
+  border-radius:20px;
+  position:relative;
+}
+
+.close-btn{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:24px;
+  cursor:pointer;
+  color:white;
+}
+
+.modal-box h2{
+  color:#00ff66;
+  margin-bottom:25px;
+  font-size:35px;
+}
+
+.option-group{
+  margin-bottom:30px;
+}
+
+.option-group h3{
+  margin-bottom:15px;
+  color:#00ff66;
+}
+
+.option-group label{
+  display:block;
+  margin:12px 0;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.confirm-btn{
+  width:100%;
+  padding:16px;
+  border:none;
+  background:#00ff66;
+  color:black;
+  font-size:20px;
+  font-weight:bold;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      text-align:center;
+      padding:25px;
+      color:#888;
+      border-top:1px solid #222;
+    }
+
+    /* WHATSAPP FLOAT */
+
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      background:#00ff66;
+      color:black;
+      padding:15px 25px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 0 20px rgba(0,255,100,0.5);
+      z-index:1000;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+
+      .hero-content h1{
+        font-size:45px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      .section-title,
+      .about-text h2,
+      .contact h2{
+        font-size:38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">Subway RYK</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>
+        Fresh Sandwiches <br>
+        <span>Made For You</span>
+      </h1>
+
+      <p>
+        Delicious Subs, Fresh Ingredients & Fast Service
+      </p>
+
+      <a href="#menu" class="btn">Explore Menu</a>
+
+      <a href="https://wa.me/923001234567" class="btn" target="_blank">
+        Order on WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="about-text">
+
+      <h2>About Us</h2>
+
+      <p>
+        Welcome to Subway Rahim Yar Khan.
+        We provide premium quality sandwiches,
+        delicious cookies, fresh drinks and amazing fast food experience.
+      </p>
+
+      <br>
+
+      <p>
+        Every sandwich is prepared fresh with love and top quality ingredients.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- MENU -->
+
+
+
+<section class="menu" id="menu">
+
+  <h2 class="section-title">Full Menu</h2>
+
+  <div class="menu-container">
+
+    <!-- CARD 1 -->
+
+    <div class="menu-card">
+
+      <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="menu-content">
+
+        <h3>Chicken Teriyaki</h3>
+
+        <span class="price">Rs.1450</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Chicken Teriyaki')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="menu-card">
+
+      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="menu-content">
+
+        <h3>Italian B.M.T.</h3>
+
+        <span class="price">Rs.1650</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Italian B.M.T.')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CUSTOMIZATION MODAL -->
+
+<div class="custom-modal" id="customModal">
+
+  <div class="modal-box">
+
+    <span class="close-btn" onclick="closeCustomizer()">
+      ✖
+    </span>
+
+    <h2 id="sandwichName">
+      Sandwich
+    </h2>
+
+    <!-- SALADS -->
+
+    <div class="option-group">
+
+      <h3>Select Salads</h3>
+
+      <label><input type="checkbox" value="Lettuce"> Lettuce</label>
+
+      <label><input type="checkbox" value="Tomato"> Tomato</label>
+
+      <label><input type="checkbox" value="Cucumber"> Cucumber</label>
+
+      <label><input type="checkbox" value="Olives"> Olives</label>
+
+      <label><input type="checkbox" value="Onion"> Onion</label>
+
+    </div>
+
+    <!-- SAUCES -->
+
+    <div class="option-group">
+
+      <h3>Select Sauce</h3>
+
+      <label><input type="radio" name="sauce" value="Mayo"> Mayo</label>
+
+      <label><input type="radio" name="sauce" value="Chipotle"> Chipotle</label>
+
+      <label><input type="radio" name="sauce" value="BBQ"> BBQ</label>
+
+      <label><input type="radio" name="sauce" value="Hot Sauce"> Hot Sauce</label>
+
+    </div>
+
+    <button class="confirm-btn" onclick="sendWhatsAppOrder()">
+      Confirm Order
+    </button>
+
+  </div>
+
+</div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>📍 Rahim Yar Khan, Punjab, Pakistan</p>
+
+    <p>📞 +92 300 1234567</p>
+
+    <p>📧 subwayryk@gmail.com</p>
+
+    <a href="https://wa.me/923001234567" class="btn" target="_blank">
+      Chat on WhatsApp
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Subway Rahim Yar Khan — All Rights Reserved
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+
+  <a
+    href="https://wa.me/923001234567"
+    target="_blank"
+    class="whatsapp"
+  >
+    WhatsApp Order
+  </a>
+
+  <script>
+
+ 
+
+let selectedSandwich = '';
+
+function openCustomizer(name){
+
+  selectedSandwich = name;
+
+  document.getElementById('sandwichName').innerText = name;
+
+  document.getElementById('customModal').style.display = 'flex';
+}
+
+function closeCustomizer(){
+
+  document.getElementById('customModal').style.display = 'none';
+}
+
+function sendWhatsAppOrder(){
+
+  // SALADS
+
+  let salads = [];
+
+  document.querySelectorAll('.option-group input[type="checkbox"]:checked')
+  .forEach(item => {
+
+    salads.push(item.value);
+
+  });
+
+  // SAUCE
+
+  let sauce = '';
+
+  document.querySelectorAll('input[name="sauce"]')
+  .forEach(item => {
+
+    if(item.checked){
+
+      sauce = item.value;
+    }
+
+  });
+
+  // MESSAGE
+
+  let message =
+`Hello Subway,
+
+I want to order:
+
+Sandwich: ${selectedSandwich}
+
+Salads:
+${salads.join(', ')}
+
+Sauce:
+${sauce}
+`;
+
+  // WHATSAPP URL
+
+  let whatsappURL =
+`https://wa.me/923337480888?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, '_blank');
+}
+  </script>
+
+</body>
+</html>
