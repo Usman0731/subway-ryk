@@ -233,8 +233,12 @@
   background:rgba(0,0,0,0.8);
   display:none;
   justify-content:center;
-  align-items:center;
+  align-items:flex-start;
+  padding-top: 80px;
+  padding-bottom: 40px;
   z-index:2000;
+  overflow: auto;
+
 }
 
 .modal-box{
@@ -289,6 +293,7 @@
   cursor:pointer;
 }
 
+
     /* FOOTER */
 
     footer{
@@ -341,7 +346,35 @@
       .contact h2{
         font-size:38px;
       }
-    }
+
+       .menu-container{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+
+  .menu-card img{
+    height:140px;
+  }
+
+  .menu-content{
+    padding:12px;
+  }
+
+  .menu-content h3{
+    font-size:18px;
+  }
+
+  .price{
+    font-size:16px;
+    margin-bottom:12px;
+  }
+
+  .order-btn{
+    padding:10px;
+    font-size:15px;
+  }
+
+}
   </style>
 </head>
 
@@ -377,7 +410,7 @@
 
       <a href="#menu" class="btn">Explore Menu</a>
 
-      <a href="https://wa.me/923001234567" class="btn" target="_blank">
+      <a href="https://wa.me/923337480888" class="btn" target="_blank">
         Order on WhatsApp
       </a>
 
@@ -385,39 +418,14 @@
 
   </section>
 
-  <!-- ABOUT -->
-
-  <section class="about" id="about">
-
-    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="about-text">
-
-      <h2>About Us</h2>
-
-      <p>
-        Welcome to Subway Rahim Yar Khan.
-        We provide premium quality sandwiches,
-        delicious cookies, fresh drinks and amazing fast food experience.
-      </p>
-
-      <br>
-
-      <p>
-        Every sandwich is prepared fresh with love and top quality ingredients.
-      </p>
-
-    </div>
-
-  </section>
-
+  
   <!-- MENU -->
 
 
 
 <section class="menu" id="menu">
 
-  <h2 class="section-title">Full Menu</h2>
+  <h2 class="section-title">Menu</h2>
 
   <div class="menu-container">
 
@@ -471,6 +479,32 @@
 
 </section>
 
+<!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="about-text">
+
+      <h2>About Us</h2>
+
+      <p>
+        Welcome to Subway Rahim Yar Khan.
+        We provide premium quality sandwiches,
+        delicious cookies, fresh drinks and amazing fast food experience.
+      </p>
+
+      <br>
+
+      <p>
+        Every sandwich is prepared fresh with love and top quality ingredients.
+      </p>
+
+    </div>
+
+  </section>
+
 <!-- CUSTOMIZATION MODAL -->
 
 <div class="custom-modal" id="customModal">
@@ -485,9 +519,28 @@
       Sandwich
     </h2>
 
+     <!-- BREADS -->
+
+    <div class="option-group bread-options">
+
+      <h3>Select Breads</h3>
+
+      <label><input type="checkbox" value="Oregano"> Oregano</label>
+
+      <label><input type="checkbox" value="Italian"> Italian</label>
+      
+      <label><input type="checkbox" value="Sesame"> Sesame</label>
+
+      <label><input type="checkbox" value="Honey Oat"> Honey Oat</label>
+      
+      <label><input type="checkbox" value="Wheat"> Wheat</label>
+
+    </div>
+
+
     <!-- SALADS -->
 
-    <div class="option-group">
+    <div class="option-group salad-options">
 
       <h3>Select Salads</h3>
 
@@ -497,25 +550,41 @@
 
       <label><input type="checkbox" value="Cucumber"> Cucumber</label>
 
-      <label><input type="checkbox" value="Olives"> Olives</label>
+      <label><input type="checkbox" value="Pickle"> Pickle</label>
 
       <label><input type="checkbox" value="Onion"> Onion</label>
+
+      <label><input type="checkbox" value="Jalapeno"> Jalapeno</label>
+
+      <label><input type="checkbox" value="Olives"> Olives</label>
+
+      <label><input type="checkbox" value="Capsicums"> Capsicums</label>
 
     </div>
 
     <!-- SAUCES -->
 
-    <div class="option-group">
+    <div class="option-group sauce-options">
 
       <h3>Select Sauce</h3>
 
-      <label><input type="radio" name="sauce" value="Mayo"> Mayo</label>
+      <label><input type="checkbox"  value="Ketchap"> Ketchap</label>
 
-      <label><input type="radio" name="sauce" value="Chipotle"> Chipotle</label>
+      <label><input type="checkbox"  value="Mustard"> Mustard</label>
 
-      <label><input type="radio" name="sauce" value="BBQ"> BBQ</label>
+      <label><input type="checkbox"  value="Mayonnaise"> Mayonnaise</label>
 
-      <label><input type="radio" name="sauce" value="Hot Sauce"> Hot Sauce</label>
+      <label><input type="checkbox"  value="Chilli sauce"> Chilli sauce</label>
+
+      <label><input type="checkbox"  value="Honey mustard"> Honey mustard</label>
+
+      <label><input type="checkbox"  value="Thousand island"> Thousand island</label>
+
+      <label><input type="checkbox"  value="Chipotle Southwest"> Chipotle Southwest</label>
+
+      <label><input type="checkbox"  value="Bar B Q"> Bar B Q</label>
+
+      <label><input type="checkbox"  value="Olive Oil"> Olive Oil</label>
 
     </div>
 
@@ -538,11 +607,11 @@
 
     <p>📍 Rahim Yar Khan, Punjab, Pakistan</p>
 
-    <p>📞 +92 300 1234567</p>
+    <p>📞 +92 3337480888</p>
 
     <p>📧 subwayryk@gmail.com</p>
 
-    <a href="https://wa.me/923001234567" class="btn" target="_blank">
+    <a href="https://wa.me/923337480888" class="btn" target="_blank">
       Chat on WhatsApp
     </a>
 
@@ -557,84 +626,70 @@
   <!-- FLOATING WHATSAPP -->
 
   <a
-    href="https://wa.me/923001234567"
+    href="https://wa.me/923337480888"
     target="_blank"
     class="whatsapp"
   >
     WhatsApp Order
   </a>
 
-  <script>
-
- 
+<script>
 
 let selectedSandwich = '';
 
 function openCustomizer(name){
-
   selectedSandwich = name;
-
   document.getElementById('sandwichName').innerText = name;
-
   document.getElementById('customModal').style.display = 'flex';
+   // BACKGROUND SCROLL STOP
+  document.body.style.overflow = 'hidden';
+
 }
 
 function closeCustomizer(){
-
   document.getElementById('customModal').style.display = 'none';
 }
 
 function sendWhatsAppOrder(){
 
-  // SALADS
+  let breads = [];
+  document.querySelectorAll('.bread-options input[type="checkbox"]:checked')
+  .forEach(item => breads.push(item.value));
+
 
   let salads = [];
+  document.querySelectorAll('.salad-options input[type="checkbox"]:checked')
+  .forEach(item => salads.push(item.value));
 
-  document.querySelectorAll('.option-group input[type="checkbox"]:checked')
-  .forEach(item => {
-
-    salads.push(item.value);
-
-  });
-
-  // SAUCE
-
-  let sauce = '';
-
-  document.querySelectorAll('input[name="sauce"]')
-  .forEach(item => {
-
-    if(item.checked){
-
-      sauce = item.value;
-    }
-
-  });
-
-  // MESSAGE
+  let sauces = [];
+  document.querySelectorAll('.sauce-options input[type="checkbox"]:checked')
+  .forEach(item => sauces.push(item.value));
 
   let message =
 `Hello Subway,
 
 I want to order:
 
-Sandwich: ${selectedSandwich}
+Sandwich: ${selectedSandwich || "Not Selected"}
+
+Breads:
+${breads.length ? breads.join(', ') : "None"}
 
 Salads:
-${salads.join(', ')}
+${salads.length ? salads.join(', ') : "None"}
 
-Sauce:
-${sauce}
+Sauces:
+${sauces.length ? sauces.join(', ') : "None"}
 `;
 
-  // WHATSAPP URL
+
 
   let whatsappURL =
 `https://wa.me/923337480888?text=${encodeURIComponent(message)}`;
 
   window.open(whatsappURL, '_blank');
 }
-  </script>
 
+</script>
 </body>
 </html>
