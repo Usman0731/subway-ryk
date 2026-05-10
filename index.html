@@ -321,11 +321,11 @@
     }
 
      .sub-title{
-  font-size:30px;
+  font-size:40px;
   color:#00ff66;
   margin:40px 8% 20px;
-  border-left:4px solid #00ff66;
-  padding-left:12px;
+  /* border-left:4px solid #00ff66; */
+  padding-left:1px;
 }
 
     /* RESPONSIVE */
@@ -382,6 +382,78 @@
     font-size:15px;
   }
 
+  /* CART MOBILE */
+
+#cartItems .menu-card{
+  margin-bottom:15px;
+}
+
+#cartItems .menu-content h3{
+  font-size:20px;
+}
+
+#cartItems .menu-content p{
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* MODAL MOBILE */
+
+.modal-box{
+  width:95%;
+  padding:20px;
+  margin-bottom:40px;
+}
+
+.modal-box h2{
+  font-size:26px;
+}
+
+.option-group h3{
+  font-size:20px;
+}
+
+.option-group label{
+  font-size:16px;
+}
+
+.confirm-btn{
+  font-size:17px;
+  padding:14px;
+}
+
+/* NAVBAR MOBILE */
+
+nav{
+  padding:15px 5%;
+}
+
+.logo{
+  font-size:24px;
+}
+
+nav ul li a{
+  font-size:15px;
+}
+
+/* HERO MOBILE */
+
+.hero-content h1{
+  font-size:38px;
+  line-height:1.2;
+}
+
+.hero-content p{
+  font-size:16px;
+}
+
+/* BUTTONS */
+
+.btn{
+  padding:12px 25px;
+  font-size:15px;
+}
+
  
 
 }
@@ -400,6 +472,7 @@
       <li><a href="#menu">Menu</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#cartSection">Cart(<span id="cartCount">0</span>)</a></li>
     </ul>
   </nav>
 
@@ -420,9 +493,9 @@
 
       <a href="#menu" class="btn">Explore Menu</a>
 
-      <a href="https://wa.me/923337480888" class="btn" target="_blank">
+      <!-- <a href="https://wa.me/923337480888" class="btn" target="_blank">
         Order on WhatsApp
-      </a>
+      </a> -->
 
     </div>
 
@@ -438,14 +511,14 @@
   <h2 class="section-title">Menu</h2>
 
    <!-- CLASSIC -->
- 
+  
   <h3 class="sub-title">Classic</h3>
 
   <div class="menu-container">
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+      <img src="roasted.jpg">
 
       <div class="menu-content">
 
@@ -463,10 +536,10 @@
       </div>
 
     </div>
-
+  
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="roasted.jpg">
 
       <div class="menu-content">
 
@@ -487,7 +560,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="chapli.jpg">
 
       <div class="menu-content">
 
@@ -508,7 +581,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="chapli.jpg">
 
       <div class="menu-content">
 
@@ -529,7 +602,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="mughlai.jpg">
 
       <div class="menu-content">
 
@@ -550,7 +623,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="mughlai.jpg">
 
       <div class="menu-content">
 
@@ -571,7 +644,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="veggiedelite.png">
 
       <div class="menu-content">
 
@@ -592,7 +665,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="veggiedelite.png">
 
       <div class="menu-content">
 
@@ -621,7 +694,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+      <img src="tikka.jpg">
 
       <div class="menu-content">
 
@@ -642,7 +715,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="tikka.jpg">
 
       <div class="menu-content">
 
@@ -663,7 +736,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="fajita.jpg">
 
       <div class="menu-content">
 
@@ -684,7 +757,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="fajita.jpg">
 
       <div class="menu-content">
 
@@ -713,7 +786,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+      <img src="BBQ.jpg">
 
       <div class="menu-content">
 
@@ -734,7 +807,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="BBQ.jpg">
 
       <div class="menu-content">
 
@@ -755,7 +828,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="teriyaki.jpg">
 
       <div class="menu-content">
 
@@ -776,7 +849,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="teriyaki.jpg">
 
       <div class="menu-content">
 
@@ -805,7 +878,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=1200&auto=format&fit=crop">
+      <img src="bmt.png">
 
       <div class="menu-content">
 
@@ -826,7 +899,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="bmt.png">
 
       <div class="menu-content">
 
@@ -847,7 +920,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="steak.jpg">
 
       <div class="menu-content">
 
@@ -868,7 +941,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="steak.jpg">
 
       <div class="menu-content">
 
@@ -889,7 +962,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="turkey.jpg">
 
       <div class="menu-content">
 
@@ -910,7 +983,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="turkey.jpg">
 
       <div class="menu-content">
 
@@ -931,7 +1004,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="tuna.jpg">
 
       <div class="menu-content">
 
@@ -952,7 +1025,7 @@
 
     <div class="menu-card">
 
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1200&auto=format&fit=crop">
+      <img src="tuna.jpg">
 
       <div class="menu-content">
 
@@ -973,8 +1046,461 @@
 
   </div>
 
+  <!-- Salads -->
+ 
+  <h3 class="sub-title">Salads</h3>
+
+  <div class="menu-container">
+
+    <div class="menu-card">
+
+      <img src="tikkasalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Tikka Salad</h3>
+
+        <span class="price">Rs.810</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Tikka Salad', 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="fajitasalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Fajita Salad</h3>
+
+        <span class="price">Rs.810</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Fajita Salad', 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="bbqsalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>BBQ Salad</h3>
+
+        <span class="price">RS.850</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('BBQ Salad', 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="teriyakisalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Teriyaki Salad</h3>
+
+        <span class="price">Rs.850</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Teriyaki Salad', 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="chaplisalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Chapli Salad</h3>
+
+        <span class="price">Rs.760</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Chapli Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="mughlaisalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Mughlai Salad</h3>
+
+        <span class="price">Rs.760</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Mughlai Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="rcbsalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>RCB Salad</h3>
+
+        <span class="price">Rs.760</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('RCB Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="bmtsalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>B.M.T Salad</h3>
+
+        <span class="price">Rs.1480</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('B.M.T Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+      
+      <img src="turkeysalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Turkey Salad</h3>
+
+        <span class="price">Rs.1480</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Turkey Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="steaksalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Beef Steak Salad</h3>
+
+        <span class="price">Rs.1480</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Beef Steak Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="tunasalad.jpg">
+
+      <div class="menu-content">
+
+        <h3>Tuna Salad</h3>
+
+        <span class="price">Rs.1480</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Tuna Salad' , 'salad')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Soft Drink -->
+ 
+  <h3 class="sub-title">Soft Drinks</h3>
+
+  <div class="menu-container">
+
+    <div class="menu-card">
+
+      <img src="7up.jpg">
+
+      <div class="menu-content">
+
+        <h3>7up 345ml</h3>
+
+        <span class="price">Rs.110</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Italian B.M.T SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="pepsi.jpg">
+
+      <div class="menu-content">
+
+        <h3>Pepsi 345ml</h3>
+
+        <span class="price">Rs.110</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Italian B.M.T 12')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="zero7up.jpg">
+
+      <div class="menu-content">
+
+        <h3>Zero 7up 250ml</h3>
+
+        <span class="price">RS.125</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="zeropep.jpg">
+
+      <div class="menu-content">
+
+        <h3>Zero Pepsi 250ml</h3>
+
+        <span class="price">RS.125</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="dew.jpg">
+
+      <div class="menu-content">
+
+        <h3>Dew 345ml</h3>
+
+        <span class="price">RS.110</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="marinda.jpg">
+
+      <div class="menu-content">
+
+        <h3>Marinda 345ml</h3>
+
+        <span class="price">RS.110</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="glass.jpg">
+
+      <div class="menu-content">
+
+        <h3>Nestle Peach</h3>
+
+        <span class="price">RS.180</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="glass.jpg">
+
+      <div class="menu-content">
+
+        <h3>Nestle Mango</h3>
+
+        <span class="price">RS.180</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="glass.jpg">
+
+      <div class="menu-content">
+
+        <h3>Neslte Pineapple</h3>
+
+        <span class="price">RS.180</span>
+
+        <button
+          class="order-btn"
+          onclick="openCustomizer('Steak & Cheese SIX')"
+        >
+          Customize & Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
+
+</section>
+
+ <!-- CART -->
+
+<section class="menu" id="cartSection">
+
+  <h2 class="section-title">Your Cart</h2>
+
+  <div id="cartItems"></div>
+
+  <button
+    class="confirm-btn"
+    style="margin-top:30px;"
+    onclick="sendWhatsAppOrder()"
+  >
+    Confirm Full Order
+  </button>
 
 </section>
 
@@ -1020,7 +1546,7 @@
 
      <!-- BREADS -->
 
-    <div class="option-group bread-options">
+    <div class="option-group bread-options" id="breadSection">
 
       <h3>Select Breads</h3>
 
@@ -1087,8 +1613,8 @@
 
     </div>
 
-    <button class="confirm-btn" onclick="sendWhatsAppOrder()">
-      Confirm Order
+    <button class="confirm-btn" onclick="addToCart()">
+  Add To Cart
     </button>
 
   </div>
@@ -1097,6 +1623,8 @@
     </div>
 
   </section>
+  
+ 
 
   <!-- CONTACT -->
 
@@ -1133,28 +1661,58 @@
   </a>
 
 <script>
-
+let selectedType = '';
 let selectedSandwich = '';
+let cart = [];
 
-function openCustomizer(name){
+// function openCustomizer(name){
+
+//   selectedSandwich = name;
+
+//   document.getElementById('sandwichName').innerText = name;
+
+//   document.getElementById('customModal').style.display = 'flex';
+
+//   document.body.style.overflow = 'hidden';
+// }
+
+function openCustomizer(name, type){
+
+  selectedType = type;
   selectedSandwich = name;
+
   document.getElementById('sandwichName').innerText = name;
+
   document.getElementById('customModal').style.display = 'flex';
-   // BACKGROUND SCROLL STOP
+
   document.body.style.overflow = 'hidden';
 
+  const breadSection =
+  document.getElementById('breadSection');
+
+  // Salad category
+  if(type === 'salad'){
+
+    breadSection.style.display = 'none';
+
+  }else{
+
+    breadSection.style.display = 'block';
+  }
 }
 
 function closeCustomizer(){
+
   document.getElementById('customModal').style.display = 'none';
+
+  document.body.style.overflow = 'auto';
 }
 
-function sendWhatsAppOrder(){
+function addToCart(){
 
   let breads = [];
   document.querySelectorAll('.bread-options input[type="checkbox"]:checked')
   .forEach(item => breads.push(item.value));
-
 
   let salads = [];
   document.querySelectorAll('.salad-options input[type="checkbox"]:checked')
@@ -1164,29 +1722,121 @@ function sendWhatsAppOrder(){
   document.querySelectorAll('.sauce-options input[type="checkbox"]:checked')
   .forEach(item => sauces.push(item.value));
 
-  let message =
-`Hello Subway,
+  let item = {
 
-I want to order:
+      type: selectedType,
+    sandwich: selectedSandwich,
 
-Sandwich: ${selectedSandwich || "Not Selected"}
+    breads: breads,
 
-Breads:
-${breads.length ? breads.join(', ') : "None"}
+    salads: salads,
 
-Salads:
-${salads.length ? salads.join(', ') : "None"}
+    sauces: sauces
+  };
 
-Sauces:
-${sauces.length ? sauces.join(', ') : "None"}
-`;
+  cart.push(item);
 
+  updateCart();
 
+  closeCustomizer();
+
+  clearSelections();
+}
+
+function updateCart(){
+
+  let cartHTML = '';
+
+  cart.forEach((item, index) => {
+
+    cartHTML += `
+
+    <div class="menu-card" style="margin-bottom:20px;">
+
+      <div class="menu-content">
+
+        <h3>${item.sandwich}</h3>
+
+        <p>
+        <strong>Breads:</strong>
+        ${item.breads.join(', ') || 'None'}
+        </p>
+
+        <p>
+        <strong>Salads:</strong>
+        ${item.salads.join(', ') || 'None'}
+        </p>
+
+        <p>
+        <strong>Sauces:</strong>
+        ${item.sauces.join(', ') || 'None'}
+        </p>
+
+        
+
+        <button
+          class="order-btn"
+          style="margin-top:15px; background:red; color:white;"
+          onclick="removeFromCart(${index})"
+        >
+          Remove
+        </button>
+
+      </div>
+
+    </div>
+    `;
+  });
+
+  document.getElementById('cartItems').innerHTML = cartHTML;
+  document.getElementById('cartCount').innerText = cart.length;
+}
+
+//   document.getElementById('cartItems').innerHTML = cartHTML;
+// }
+
+//   document.getElementById('cartItems').innerHTML = cartHTML;
+// }
+
+function sendWhatsAppOrder(){
+
+  if(cart.length === 0){
+
+    alert('Cart is empty');
+
+    return;
+  }
+
+  let message = 'Hello Subway,%0A%0A';
+
+  cart.forEach((item, index) => {
+
+  message +=
+`Item ${index + 1}%0A
+${item.type === 'salad' ? 'Salad' : 'Sandwich'}: ${item.sandwich}%0A
+Breads: ${item.breads.join(', ') || 'None'}%0A
+Salads: ${item.salads.join(', ') || 'None'}%0A
+Sauces: ${item.sauces.join(', ') || 'None'}%0A%0A`;
+  });
 
   let whatsappURL =
-`https://wa.me/923337480888?text=${encodeURIComponent(message)}`;
+`https://wa.me/923337480888?text=${message}`;
 
   window.open(whatsappURL, '_blank');
+}
+
+function clearSelections(){
+
+  document
+  .querySelectorAll('input[type="checkbox"]')
+  .forEach(item => item.checked = false);
+}
+
+function removeFromCart(index){
+
+  cart.splice(index, 1);
+
+  updateCart();
 }
 
 </script>
