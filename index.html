@@ -328,6 +328,28 @@
   padding-left:1px;
 }
 
+#toastMessage{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#00ff66;
+  color:black;
+  padding:14px 25px;
+  border-radius:50px;
+  font-weight:bold;
+  font-size:16px;
+  opacity:0;
+  pointer-events:none;
+  transition:0.4s;
+  z-index:5000;
+}
+
+#toastMessage.show{
+  opacity:1;
+  bottom:50px;
+}
+
     /* RESPONSIVE */
 
     @media(max-width:768px){
@@ -1293,7 +1315,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="7up.jpg">
+      <img src="7up.png">
 
       <div class="menu-content">
 
@@ -1303,9 +1325,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Italian B.M.T SIX')"
+          onclick="addDrinkToCart('7up 345ml')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1314,7 +1336,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="pepsi.jpg">
+      <img src="pepsi.png">
 
       <div class="menu-content">
 
@@ -1324,9 +1346,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Italian B.M.T 12')"
+          onclick="addDrinkToCart('Pepsi 345ml')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1345,9 +1367,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('zero 7up 250ml')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1366,9 +1388,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('Zero Pepsi 250ml')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1387,9 +1409,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('Dew 345ml')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1408,9 +1430,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('Marinda 345ml')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1429,9 +1451,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('Nestle Peach')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1450,9 +1472,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('Neslte Mango')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1471,9 +1493,9 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Steak & Cheese SIX')"
+          onclick="addDrinkToCart('Nestle Pineapple')"
         >
-          Customize & Order
+        Order
         </button>
 
       </div>
@@ -1494,15 +1516,85 @@ nav ul li a{
 
   <div id="cartItems"></div>
 
-  <button
+  <!-- <button
     class="confirm-btn"
     style="margin-top:30px;"
     onclick="sendWhatsAppOrder()"
   >
     Confirm Full Order
-  </button>
+  </button> -->
+
+  <button
+  class="confirm-btn"
+  style="margin-top:30px;"
+  onclick="openCheckout()"
+>
+  Confirm Full Order
+</button>
 
 </section>
+
+<!-- CHECKOUT MODAL -->
+
+<div class="custom-modal" id="checkoutModal">
+
+  <div class="modal-box">
+
+    <span class="close-btn" onclick="closeCheckout()">
+      ✖
+    </span>
+
+    <h2>Customer Details</h2>
+
+    <div class="option-group">
+
+      <h3>Your Name</h3>
+
+      <input
+        type="text"
+        id="customerName"
+        placeholder="Enter your name"
+        style="
+          width:100%;
+          padding:14px;
+          border:none;
+          border-radius:10px;
+          font-size:16px;
+        "
+      >
+
+    </div>
+
+    <div class="option-group">
+
+      <h3>Your Address</h3>
+
+      <textarea
+        id="customerAddress"
+        placeholder="Enter delivery address"
+        style="
+          width:100%;
+          height:120px;
+          padding:14px;
+          border:none;
+          border-radius:10px;
+          font-size:16px;
+          resize:none;
+        "
+      ></textarea>
+
+    </div>
+
+    <button
+      class="confirm-btn"
+      onclick="sendWhatsAppOrder()"
+    >
+      Confirm & Send
+    </button>
+
+  </div>
+
+</div>
 
 <!-- ABOUT -->
 
@@ -1644,6 +1736,14 @@ nav ul li a{
 
   </section>
 
+  <!-- TOAST MESSAGE -->
+
+<div id="toastMessage">
+
+  Added To Cart
+
+</div>
+
   <!-- FOOTER -->
 
   <footer>
@@ -1675,6 +1775,20 @@ let cart = [];
 
 //   document.body.style.overflow = 'hidden';
 // }
+
+function showToast(){
+
+  const toast =
+  document.getElementById('toastMessage');
+
+  toast.classList.add('show');
+
+  setTimeout(() => {
+
+    toast.classList.remove('show');
+
+  }, 2000);
+}
 
 function openCustomizer(name, type){
 
@@ -1738,11 +1852,35 @@ function addToCart(){
 
   updateCart();
 
+  showToast();
+
   closeCustomizer();
 
   clearSelections();
 }
 
+function addDrinkToCart(name){
+
+  let item = {
+
+    type: 'drink',
+
+    sandwich: name,
+
+    breads: [],
+
+    salads: [],
+
+    sauces: []
+  };
+
+  cart.push(item);
+
+  updateCart();
+  
+  showToast();
+
+}
 function updateCart(){
 
   let cartHTML = '';
@@ -1798,7 +1936,7 @@ function updateCart(){
 //   document.getElementById('cartItems').innerHTML = cartHTML;
 // }
 
-function sendWhatsAppOrder(){
+function openCheckout(){
 
   if(cart.length === 0){
 
@@ -1807,13 +1945,47 @@ function sendWhatsAppOrder(){
     return;
   }
 
-  let message = 'Hello Subway,%0A%0A';
+  document.getElementById('checkoutModal').style.display = 'flex';
+
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckout(){
+
+  document.getElementById('checkoutModal').style.display = 'none';
+
+  document.body.style.overflow = 'auto';
+}
+
+function sendWhatsAppOrder(){
+
+  let customerName =
+document.getElementById('customerName').value;
+
+let customerAddress =
+document.getElementById('customerAddress').value;
+
+  if(cart.length === 0){
+
+    alert('Cart is empty');
+
+    return;
+  }
+
+  let message =
+`Hello Subway,%0A%0A
+Customer Name: ${customerName}%0A
+Address: ${customerAddress}%0A%0A`;
 
   cart.forEach((item, index) => {
 
   message +=
 `Item ${index + 1}%0A
-${item.type === 'salad' ? 'Salad' : 'Sandwich'}: ${item.sandwich}%0A
+${item.type === 'salad'
+? 'Salad'
+: item.type === 'drink'
+? 'Soft Drink'
+: 'Sandwich'}: ${item.sandwich}%0A
 Breads: ${item.breads.join(', ') || 'None'}%0A
 Salads: ${item.salads.join(', ') || 'None'}%0A
 Sauces: ${item.sauces.join(', ') || 'None'}%0A%0A`;
