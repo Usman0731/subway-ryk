@@ -374,6 +374,57 @@
   transform:scale(1.05);
 }
 
+#preloader{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.loader-box{
+  text-align:center;
+  color:#00ff66;
+}
+
+.subway{
+  font-size:60px;
+  animation:float 1s ease-in-out infinite;
+}
+
+.text{
+  margin-top:15px;
+  font-size:18px;
+  letter-spacing:1px;
+}
+
+.bar{
+  width:200px;
+  height:6px;
+  background:#222;
+  border-radius:50px;
+  margin:20px auto 0;
+  overflow:hidden;
+}
+
+.progress{
+  width:0%;
+  height:100%;
+  background:#00ff66;
+  animation:load 2s linear forwards;
+}
+
+@keyframes load{
+  0%{width:0%;}
+  100%{width:100%;}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
     /* RESPONSIVE */
 
     @media(max-width:768px){
@@ -507,6 +558,20 @@ nav ul li a{
 </head>
 
 <body>
+
+  <div id="preloader">
+  <div class="loader-box">
+    
+    <div class="subway">🥖</div>
+
+    <div class="text">Fresh Sandwich Loading...</div>
+
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+
+  </div>
+</div>
 
   <!-- NAVBAR -->
 
@@ -1863,6 +1928,13 @@ nav ul li a{
 
 <script>
 
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("preloader").style.display = "none";
+  }, 2000);
+});
+
 function searchMenu(){
 
   let input =
@@ -2075,9 +2147,20 @@ function addToCart(){
 
   let breads = [];
 
+ 
   document
   .querySelectorAll('.bread-options input[type="checkbox"]:checked')
   .forEach(item => breads.push(item.value));
+
+  // VALIDATION
+
+  if(selectedType !== 'salad' && breads.length === 0){
+
+    alert('Please select at least 1 bread');
+
+    return;
+  }
+
 
   let salads = [];
 
