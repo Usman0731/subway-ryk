@@ -350,6 +350,30 @@
   bottom:50px;
 }
 
+.filter-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+  margin-bottom:40px;
+}
+
+.filter-buttons button{
+  padding:12px 22px;
+  border:none;
+  border-radius:40px;
+  background:#00ff66;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.filter-buttons button:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
     /* RESPONSIVE */
 
     @media(max-width:768px){
@@ -530,13 +554,54 @@ nav ul li a{
 
 <section class="menu" id="menu">
 
+  <div style="text-align:center; margin-bottom:40px;">
+
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Sandwich..."
+    onkeyup="searchMenu()"
+    style="
+      width:100%;
+      max-width:500px;
+      padding:16px 20px;
+      border:none;
+      border-radius:50px;
+      font-size:18px;
+      outline:none;
+      background:#000;
+      color:white;
+      border:2px solid #00ff66;
+    "
+  >
+
+</div>
+
+  <div class="filter-buttons">
+
+  <button onclick="filterMenu('all')">All</button>
+
+  <button onclick="filterMenu('classic')">Classic</button>
+
+  <button onclick="filterMenu('favorites')">Favorites</button>
+
+  <button onclick="filterMenu('subs')">Super Subs</button>
+
+  <button onclick="filterMenu('signatures')">Signatures</button>
+
+  <button onclick="filterMenu('salads')">Salads</button>
+
+  <button onclick="filterMenu('drinks')">Drinks</button>
+
+</div>
+
   <h2 class="section-title">Menu</h2>
 
    <!-- CLASSIC -->
   
   <h3 class="sub-title">Classic</h3>
 
-  <div class="menu-container">
+  <div class="menu-container classic">
 
     <div class="menu-card">
 
@@ -712,7 +777,7 @@ nav ul li a{
  
   <h3 class="sub-title">Local favorities</h3>
 
-  <div class="menu-container">
+  <div class="menu-container favorites">
 
     <div class="menu-card">
 
@@ -747,7 +812,7 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('Italian B.M.T.')"
+          onclick="openCustomizer('Chicken Tikka 12')"
         >
           Customize & Order
         </button>
@@ -804,7 +869,7 @@ nav ul li a{
  
   <h3 class="sub-title">Super Subs</h3>
 
-  <div class="menu-container">
+  <div class="menu-container subs">
 
     <div class="menu-card">
 
@@ -839,7 +904,7 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('chicken BBQ 12')"
+          onclick="openCustomizer('Chicken BBQ 12')"
         >
           Customize & Order
         </button>
@@ -860,7 +925,7 @@ nav ul li a{
 
         <button
           class="order-btn"
-          onclick="openCustomizer('chicken Teriyaki SIX')"
+          onclick="openCustomizer('Chicken Teriyaki SIX')"
         >
           Customize & Order
         </button>
@@ -896,7 +961,7 @@ nav ul li a{
  
   <h3 class="sub-title">Signatures</h3>
 
-  <div class="menu-container">
+  <div class="menu-container signatures">
 
     <div class="menu-card">
 
@@ -1072,7 +1137,7 @@ nav ul li a{
  
   <h3 class="sub-title">Salads</h3>
 
-  <div class="menu-container">
+  <div class="menu-container salads">
 
     <div class="menu-card">
 
@@ -1311,7 +1376,7 @@ nav ul li a{
  
   <h3 class="sub-title">Soft Drinks</h3>
 
-  <div class="menu-container">
+  <div class="menu-container drinks">
 
     <div class="menu-card">
 
@@ -1516,6 +1581,21 @@ nav ul li a{
 
   <div id="cartItems"></div>
 
+  <div
+  style="
+    margin-top:20px;
+    background:#000;
+    padding:20px;
+    border-radius:15px;
+    border:1px solid #222;
+    text-align:center;
+  "
+>
+  <h2 style="color:#00ff66;">
+    Total Bill: Rs <span id="totalPrice">0</span>
+  </h2>
+</div>
+
   <!-- <button
     class="confirm-btn"
     style="margin-top:30px;"
@@ -1705,36 +1785,57 @@ nav ul li a{
 
     </div>
 
-    <button class="confirm-btn" onclick="addToCart()">
-  Add To Cart
-    </button>
-
-  </div>
-
-</div>
-    </div>
+  
 
   </section>
   
- 
+  <!-- ADD ONS -->  
 
-  <!-- CONTACT -->
+<div class="option-group addon-options">
 
-  <section class="contact" id="contact">
+  <h3>Add Ons</h3>
 
-    <h2>Contact Us</h2>
+  <label>
+    <input type="checkbox" value="Extra Cheese">
+    Extra Cheese (+Rs 90)
+  </label>
 
-    <p>📍 Rahim Yar Khan, Punjab, Pakistan</p>
+  <label>
+    <input type="checkbox" value="Double Chicken">
+    Double Chicken (+Rs 250)
+  </label>
 
-    <p>📞 +92 3337480888</p>
+  <label>
+    <input type="checkbox" value="Double Meat">
+    Double Meat (+Rs 900)
+  </label>
 
-    <p>📧 subwayryk@gmail.com</p>
+</div> 
 
-    <a href="https://wa.me/923337480888" class="btn" target="_blank">
-      Chat on WhatsApp
-    </a>
+<button class="confirm-btn" onclick="addToCart()">
+  Add to Cart
+</button>
 
-  </section>
+</div>
+</div>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <h2>Contact Us</h2>
+
+  <p>📍 Rahim Yar Khan, Punjab, Pakistan</p>
+
+  <p>📞 +92 3337480888</p>
+
+  <p>📧 subwayryk@gmail.com</p>
+
+  <a href="https://wa.me/923337480888" class="btn" target="_blank">
+    Chat on WhatsApp
+  </a>
+
+</section>
 
   <!-- TOAST MESSAGE -->
 
@@ -1761,9 +1862,157 @@ nav ul li a{
   </a>
 
 <script>
+
+function searchMenu(){
+
+  let input =
+  document.getElementById('searchInput')
+  .value
+  .toLowerCase();
+
+  let cards =
+  document.querySelectorAll('.menu-card');
+
+  cards.forEach(card => {
+
+    let title =
+    card.querySelector('h3')
+    .innerText
+    .toLowerCase();
+
+    if(title.includes(input)){
+
+      card.style.display = 'block';
+
+    }else{
+
+      card.style.display = 'none';
+    }
+
+  });
+
+}
+
+function filterMenu(category){
+
+  let containers =
+  document.querySelectorAll('.menu-container');
+
+  containers.forEach(container => {
+
+    if(category === 'all'){
+
+      container.style.display = 'grid';
+
+    }
+
+    else if(container.classList.contains(category)){
+
+      container.style.display = 'grid';
+
+    }
+
+    else{
+
+      container.style.display = 'none';
+    }
+
+  });
+
+}
+
 let selectedType = '';
 let selectedSandwich = '';
 let cart = [];
+
+function getPrice(name){
+
+  const prices = {
+
+    // CLASSIC
+    "Roasted Chicken SIX":700,
+    "Roasted Chicken 12":1320,
+    "Chicken Chapli SIX":700,
+    "Chicken Chapli 12":1320,
+    "Chicken Mughlai SIX":700,
+    "Chicken Mughlai 12":1320,
+    "Veggie Delite SIX":550,
+    "Veggie Delite 12":1050,
+
+    // LOCAL FAVORITES
+    "Chicken Tikka SIX":750,
+    "Chicken Tikka 12":1420,
+    "Chicken Fajita SIX":750,
+    "Chicken Fajita 12":1420,
+
+    // SUPER SUBS
+    "Chicken BBQ SIX":790,
+    "chicken BBQ 12":1500,
+    "chicken Teriyaki SIX":790,
+    "Chicken Teriyaki 12":1500,
+
+    // SIGNATURES
+    "Italian B.M.T SIX":1420,
+    "Italian B.M.T 12":2690,
+    "Steak & Cheese SIX":1420,
+    "Steak & Cheese 12":2690,
+    "Turkey Breast SIX":1420,
+    "Turkey Breast 12":2690,
+    "Tuna Fish SIX":1420,
+    "Tuna Fish 12":2690,
+
+    // SALADS
+    "Tikka Salad":810,
+    "Fajita Salad":810,
+    "BBQ Salad":850,
+    "Teriyaki Salad":850,
+    "Chapli Salad":760,
+    "Mughlai Salad":760,
+    "RCB Salad":760,
+    "B.M.T Salad":1480,
+    "Turkey Salad":1480,
+    "Beef Steak Salad":1480,
+    "Tuna Salad":1480,
+
+    // DRINKS
+    "7up 345ml":110,
+    "Pepsi 345ml":110,
+    "zero 7up 250ml":125,
+    "Zero Pepsi 250ml":125,
+    "Dew 345ml":110,
+    "Marinda 345ml":110,
+    "Nestle Peach":180,
+    "Neslte Mango":180,
+    "Nestle Pineapple":180
+
+  };
+
+  return prices[name] || 0;
+}
+
+function getAddonPrice(addons){
+
+  let total = 0;
+
+  addons.forEach(addon => {
+
+    if(addon === "Extra Cheese"){
+      total += 90;
+    }
+
+    if(addon === "Double Chicken"){
+      total += 250;
+    }
+
+    if(addon === "Double Meat"){
+      total += 900;
+    }
+
+  });
+
+  return total;
+}
+
 
 // function openCustomizer(name){
 
@@ -1825,27 +2074,46 @@ function closeCustomizer(){
 function addToCart(){
 
   let breads = [];
-  document.querySelectorAll('.bread-options input[type="checkbox"]:checked')
+
+  document
+  .querySelectorAll('.bread-options input[type="checkbox"]:checked')
   .forEach(item => breads.push(item.value));
 
   let salads = [];
-  document.querySelectorAll('.salad-options input[type="checkbox"]:checked')
+
+  document
+  .querySelectorAll('.salad-options input[type="checkbox"]:checked')
   .forEach(item => salads.push(item.value));
 
   let sauces = [];
-  document.querySelectorAll('.sauce-options input[type="checkbox"]:checked')
+
+  document
+  .querySelectorAll('.sauce-options input[type="checkbox"]:checked')
   .forEach(item => sauces.push(item.value));
+
+  let addons = [];
+
+  document
+  .querySelectorAll('.addon-options input[type="checkbox"]:checked')
+  .forEach(item => addons.push(item.value));
 
   let item = {
 
-      type: selectedType,
+    type: selectedType,
+
     sandwich: selectedSandwich,
 
     breads: breads,
 
     salads: salads,
 
-    sauces: sauces
+    sauces: sauces,
+
+    addons: addons,
+
+    price:
+      getPrice(selectedSandwich)
+      + getAddonPrice(addons)
   };
 
   cart.push(item);
@@ -1857,6 +2125,12 @@ function addToCart(){
   closeCustomizer();
 
   clearSelections();
+
+  document.getElementById('cartSection')
+.scrollIntoView({
+  behavior:'smooth'
+});
+
 }
 
 function addDrinkToCart(name){
@@ -1871,21 +2145,34 @@ function addDrinkToCart(name){
 
     salads: [],
 
-    sauces: []
+    sauces: [],
+
+    addons: [],
+
+    price: getPrice(name)
+
   };
 
   cart.push(item);
 
   updateCart();
-  
+
   showToast();
 
+  document.getElementById('cartSection')
+.scrollIntoView({
+  behavior:'smooth'
+});
 }
 function updateCart(){
 
   let cartHTML = '';
 
+  let total = 0;
+
   cart.forEach((item, index) => {
+
+    total += item.price;
 
     cartHTML += `
 
@@ -1910,7 +2197,15 @@ function updateCart(){
         ${item.sauces.join(', ') || 'None'}
         </p>
 
-        
+        <p>
+        <strong>Add Ons:</strong>
+        ${item.addons.join(', ') || 'None'}
+        </p>
+
+        <p>
+        <strong>Price:</strong>
+        Rs ${item.price}
+        </p>
 
         <button
           class="order-btn"
@@ -1923,11 +2218,15 @@ function updateCart(){
       </div>
 
     </div>
+
     `;
   });
 
   document.getElementById('cartItems').innerHTML = cartHTML;
+
   document.getElementById('cartCount').innerText = cart.length;
+
+  document.getElementById('totalPrice').innerText = total;
 }
 
 //   document.getElementById('cartItems').innerHTML = cartHTML;
@@ -1986,9 +2285,11 @@ ${item.type === 'salad'
 : item.type === 'drink'
 ? 'Soft Drink'
 : 'Sandwich'}: ${item.sandwich}%0A
-Breads: ${item.breads.join(', ') || 'None'}%0A
-Salads: ${item.salads.join(', ') || 'None'}%0A
-Sauces: ${item.sauces.join(', ') || 'None'}%0A%0A`;
+Breads: ${item.breads?.join(', ') || 'None'}%0A
+Salads: ${item.salads?.join(', ') || 'None'}%0A
+Sauces: ${item.sauces?.join(', ') || 'None'}%0A
+Add Ons: ${item.addons?.join(', ') || 'None'}%0A
+Price: Rs ${item.price}%0A%0A`;
   });
 
   let whatsappURL =
