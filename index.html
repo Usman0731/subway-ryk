@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Subway Rahim Yar Khan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -11,34 +14,48 @@
       padding:0;
       box-sizing:border-box;
       scroll-behavior:smooth;
-      font-family:Arial, Helvetica, sans-serif;
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    h1, h2, h3{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
     }
 
     body{
       background:#0d0d0d;
       color:white;
+      font-family: 'Montserrat', sans-serif !important;
     }
-
-    /* NAVBAR */
 
     nav{
-      width:100%;
-      background:#000;
-      padding:20px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:0;
-      z-index:1000;
-      border-bottom:2px solid #00ff66;
-    }
+  width:100%;
+  background:#fff;
+  padding:10px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  border-bottom:3px solid #00c853;
+}
 
-    .logo{
-      font-size:32px;
-      font-weight:bold;
-      color:#00ff66;
-    }
+   
+
+.logo{
+  font-size:34px;
+  font-weight:1000;
+  font-family:'Montserrat', sans-serif;
+  color:#ffd600;
+  letter-spacing:0px;   /* 👈 spacing remove */
+  transform:scaleX(1.05); /* thora sa stretch (optional) */
+
+}
+
+.logo span{
+  color:#00c853; /* WAY = green */
+}
 
     nav ul{
       display:flex;
@@ -46,7 +63,7 @@
       gap:30px;
     }
 
-    nav ul li a{
+    /* nav ul li a{
       text-decoration:none;
       color:white;
       font-size:18px;
@@ -55,7 +72,19 @@
 
     nav ul li a:hover{
       color:#00ff66;
-    }
+    } */
+
+    nav ul li a{
+  text-decoration:none;
+  color:#111;
+  font-size:18px;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#00c853;
+}
+
 
     /* HERO */
 
@@ -76,6 +105,9 @@
     .hero-content h1{
       font-size:70px;
       margin-bottom:20px;
+      font-family: 'Montserrat', sans-serif;
+  font-weight:800;
+  letter-spacing:2px;
     }
 
     .hero-content span{
@@ -145,6 +177,13 @@
       color:#00ff66;
       margin-bottom:60px;
     }
+    
+    .section-title{
+     font-family:'Montserrat', sans-serif;
+     font-weight:800;
+     letter-spacing:2px;
+     text-transform:uppercase;
+    }
 
     .menu-container{
       display:grid;
@@ -168,11 +207,13 @@
     }
 
     .menu-card img{
-      width:100%;
-      height: 230px;
-      object-fit:cover; 
-      /* display: block; */
-    }
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid #222;
+}
+    
 
     .menu-content{
       padding:20px;
@@ -183,9 +224,11 @@
     }
 
     .menu-content h3{
-      font-size:28px;
-      margin-bottom:10px;
-    }
+    font-size:22px;
+    font-weight:700;
+    color:#fff;
+    letter-spacing:0.5px;
+    }  
 
     .price{
       color:#00ff66;
@@ -434,31 +477,90 @@
   50%{transform:translateY(-10px);}
 }
 
+.modal-box{
+  animation:popup 0.3s ease;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(0.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+  .cart-icon{
+  position:relative;
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:#111;
+}
+
+.bag-icon{
+  width:22px;
+  height:22px;
+  fill:#111;
+}
+
+.cart-icon span{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#00c853;
+  color:#fff;
+  font-size:11px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+
 
     /* RESPONSIVE */
 
     @media(max-width:768px){
 
-      .mobile-cart-bar{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#00ff66;
-  color:black;
-  padding:14px;
-  display:none;
-  justify-content:space-between;
-  align-items:center;
-  font-weight:bold;
-  font-size:16px;
-  z-index:9999;
-  box-shadow:0 -5px 20px rgba(0,0,0,0.3);
-}
+  .bag-icon{
+    width:18px;
+    height:18px;
+  }
+
+  .cart-icon span{
+    width:16px;
+    height:16px;
+    font-size:10px;
+  }
+  
+
+    .mobile-cart-bar{
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:#00ff66;
+      color:black;
+      padding:14px;
+      display:none;
+      justify-content:space-between;
+      align-items:center;
+      font-weight:bold;
+      font-size:16px;
+      z-index:9999;
+      box-shadow:0 -5px 20px rgba(0,0,0,0.3);
+    }
 
       nav{
-        flex-direction:column;
-        gap:20px;
+        padding:10px 5%;
+        flex-direction:row;
+        /* gap:20px; */
+        justify-content: space-between;
       }
 
       nav ul{
@@ -486,8 +588,12 @@
 
 
   .menu-card img{
-    height: 140px;
-  }
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 
   .menu-content{
   padding: 12px;
@@ -551,10 +657,20 @@
 
 nav{
   padding:15px 5%;
+  min-height:60px;
+}
+
+nav ul{
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .logo{
-  font-size:24px;
+   font-size:22px;
+  font-weight:1000;
+  /* transform:scaleX(1.1); */
+  letter-spacing:0px;
 }
 
 nav ul li a{
@@ -579,9 +695,9 @@ nav ul li a{
   font-size:15px;
 }
 
- 
+} 
 
-}
+
   </style>
 </head>
 
@@ -604,16 +720,26 @@ nav ul li a{
   <!-- NAVBAR -->
 
   <nav>
-    <div class="logo">Subway RYK</div>
+    <div class="logo">SUB<span>WAY</span></div>
 
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#cartSection">Cart(<span id="cartCount">0</span>)</a></li>
+      <li>
+         <a href="#cartSection" class="cart-icon">
+    
+             <!-- simple shopping bag SVG -->
+         <svg class="bag-icon" viewBox="0 0 24 24">
+         <path d="M6 7l1-3h10l1 3h3v14H3V7h3zm2 0h8l-.5-2h-7L8 7z"/>
+         </svg>
+
+      <span id="cartCount">0</span>
+      </a>
+      </li>
     </ul>
-  </nav>
+</nav>
 
   <!-- HERO -->
 
@@ -632,7 +758,7 @@ nav ul li a{
 
       <a href="#menu" class="btn">Explore Menu</a>
 
-      <!-- <a href="https://wa.me/923337480888" class="btn" target="_blank">
+      <!-- <a href="https://wa.me/923211782929" class="btn" target="_blank">
         Order on WhatsApp
       </a> -->
 
@@ -698,7 +824,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="roasted.jpg">
+      <img src="roasted.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -719,7 +845,7 @@ nav ul li a{
   
     <div class="menu-card">
 
-      <img src="roasted.jpg">
+      <img src="roasted.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -740,7 +866,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="chapli.jpg">
+      <img src="chapli.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -761,7 +887,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="chapli.jpg">
+      <img src="chapli.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -782,7 +908,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="mughlai.jpeg">
+      <img src="mughlai.jpeg" loading="lazy">
 
       <div class="menu-content">
 
@@ -803,7 +929,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="mughlai.jpeg">
+      <img src="mughlai.jpeg" loading="lazy">
 
       <div class="menu-content">
 
@@ -824,7 +950,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="veggiedelite.png">
+      <img src="veggiedelite.png" loading="lazy">
 
       <div class="menu-content">
 
@@ -845,7 +971,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="veggiedelite.png">
+      <img src="veggiedelite.png" loading="lazy">
 
       <div class="menu-content">
 
@@ -874,7 +1000,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="tikka.jpg">
+      <img src="tikka.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -895,7 +1021,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="tikka.jpg">
+      <img src="tikka.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -916,7 +1042,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="fajita.jpg">
+      <img src="fajita.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -937,7 +1063,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="fajita.jpg">
+      <img src="fajita.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -966,7 +1092,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="BBQ.jpg">
+      <img src="BBQ.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -987,7 +1113,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="BBQ.jpg">
+      <img src="BBQ.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1008,7 +1134,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="teriyaki.jpg">
+      <img src="teriyaki.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1029,7 +1155,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="teriyaki.jpg">
+      <img src="teriyaki.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1058,7 +1184,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="bmt.png">
+      <img src="bmt.png" loading="lazy">
 
       <div class="menu-content">
 
@@ -1079,7 +1205,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="bmt.png">
+      <img src="bmt.png" loading="lazy">
 
       <div class="menu-content">
 
@@ -1100,7 +1226,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="steak.jpg">
+      <img src="steak.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1121,7 +1247,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="steak.jpg">
+      <img src="steak.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1142,7 +1268,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="turkey.jpg">
+      <img src="turkey.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1163,7 +1289,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="turkey.jpg">
+      <img src="turkey.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1184,7 +1310,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="tuna.jpg">
+      <img src="tuna.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1205,7 +1331,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="tuna.jpg">
+      <img src="tuna.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1234,7 +1360,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="tikkasalad.jpg">
+      <img src="tikkasalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1255,7 +1381,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="fajitasalad.jpg">
+      <img src="fajitasalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1276,7 +1402,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="bbqsalad.jpg">
+      <img src="bbqsalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1297,7 +1423,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="teriyakisalad.jpg">
+      <img src="teriyakisalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1318,7 +1444,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="chaplisalad.jpg">
+      <img src="chaplisalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1339,7 +1465,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="mughlaisalad.jpg">
+      <img src="mughlaisalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1360,7 +1486,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="rcbsalad.jpg">
+      <img src="rcbsalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1381,7 +1507,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="bmtsalad.jpg">
+      <img src="bmtsalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1402,7 +1528,7 @@ nav ul li a{
 
     <div class="menu-card">
       
-      <img src="turkeysalad.jpg">
+      <img src="turkeysalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1423,7 +1549,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="steaksalad.jpg">
+      <img src="steaksalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1444,7 +1570,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="tunasalad.jpg">
+      <img src="tunasalad.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1473,7 +1599,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="7up.png">
+      <img src="7up.png" loading="lazy">
 
       <div class="menu-content">
 
@@ -1494,7 +1620,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="pepsi.png">
+      <img src="pepsi.png" loading="lazy">
 
       <div class="menu-content">
 
@@ -1515,7 +1641,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="zero7up.jpg">
+      <img src="zero7up.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1536,7 +1662,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="zeropep.jpg">
+      <img src="zeropep.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1557,7 +1683,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="dew.jpg">
+      <img src="dew.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1578,7 +1704,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="marinda.jpg">
+      <img src="marinda.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1599,7 +1725,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="glass.jpg">
+      <img src="glass.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1620,7 +1746,7 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="glass.jpg">
+      <img src="glass.jpg" loading="lazy">
 
       <div class="menu-content">
 
@@ -1641,11 +1767,11 @@ nav ul li a{
 
     <div class="menu-card">
 
-      <img src="glass.jpg">
+      <img src="glass.jpg" loading="lazy">
 
       <div class="menu-content">
 
-        <h3>Neslte Pineapple</h3>
+        <h3>Nestle Pineapple</h3>
 
         <span class="price">RS.180</span>
 
@@ -1661,7 +1787,55 @@ nav ul li a{
     </div>
 
   </div>
+  <!-- Cookies -->
+ 
+  <h3 class="sub-title">Cookies</h3>
 
+  <div class="menu-container drinks">
+
+    <div class="menu-card">
+
+      <img src="cookie.jpg" loading="lazy">
+
+      <div class="menu-content">
+
+        <h3>Chocolate Chip</h3>
+
+        <span class="price">Rs.300</span>
+
+        <button
+          class="order-btn"
+          onclick="addCookieToCart('Chocolate Chip')"
+        >
+        Order
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="menu-card">
+
+      <img src="cookie2.jpg" loading="lazy">
+
+      <div class="menu-content">
+
+        <h3>Double Chocolate Chip</h3>
+
+        <span class="price">Rs.300</span>
+
+        <button
+          class="order-btn"
+          onclick="addCookieToCart('Double Chocolate Chip')"
+        >
+        Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
 </section>
@@ -1689,13 +1863,6 @@ nav ul li a{
   </h2>
 </div>
 
-  <!-- <button
-    class="confirm-btn"
-    style="margin-top:30px;"
-    onclick="sendWhatsAppOrder()"
-  >
-    Confirm Full Order
-  </button> -->
 
   <button
   class="confirm-btn"
@@ -1773,7 +1940,7 @@ nav ul li a{
 
   <section class="about" id="about">
 
-    <img src="about.png">
+    <img src="about.png" loading="lazy">
 
     <div class="about-text">
 
@@ -1832,7 +1999,7 @@ nav ul li a{
 
     <div class="option-group salad-options">
 
-      <h3>Select Salads</h3>
+      <h3>Select Veggies</h3>
 
       <label><input type="checkbox" value="Lettuce"> Lettuce</label>
 
@@ -1858,7 +2025,7 @@ nav ul li a{
 
       <h3>Select Sauce</h3>
 
-      <label><input type="checkbox"  value="Ketchap"> Ketchap</label>
+      <label><input type="checkbox"  value="Ketchap"> Ketchup</label>
 
       <label><input type="checkbox"  value="Mustard"> Mustard</label>
 
@@ -1880,7 +2047,7 @@ nav ul li a{
 
   
 
-  </section>
+  
   
   <!-- ADD ONS -->  
 
@@ -1903,6 +2070,14 @@ nav ul li a{
     Double Meat (+Rs 900)
   </label>
 
+  <!-- COMBO -->
+  <h3 style="margin-top:25px;">Combo</h3>
+
+  <label>
+    <input type="checkbox" value="Combo">
+    Cookie + Cold Drink (+Rs 400)
+  </label>
+
 </div> 
 
 <button class="confirm-btn" onclick="addToCart()">
@@ -1912,6 +2087,7 @@ nav ul li a{
 </div>
 </div>
 
+
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
@@ -1920,7 +2096,7 @@ nav ul li a{
 
   <p>📍 Rahim Yar Khan, Punjab, Pakistan</p>
 
-  <p>📞 +92 3337480888</p>
+  <p>📞 +92 3211782929</p>
 
   <p>📧 subwayryk@gmail.com</p>
 
@@ -1941,13 +2117,13 @@ nav ul li a{
   <!-- FOOTER -->
 
   <footer>
-    © 2026 Subway Rahim Yar Khan — All Rights Reserved
+    © 2026 Subway Rahim Yar Khan | Freshness You Can Taste
   </footer>
 
   <!-- FLOATING WHATSAPP -->
 
   <a
-    href="https://wa.me/923337480888"
+    href="https://wa.me/923211782929"
     target="_blank"
     class="whatsapp"
   >
@@ -1959,6 +2135,44 @@ nav ul li a{
 </div>
 
 <script>
+
+  const menuData = {
+  "Roasted Chicken SIX": { price: 700, type: "classic" },
+  "Roasted Chicken 12": { price: 1320, type: "classic" },
+
+  "Chicken Chapli SIX": { price: 700, type: "classic" },
+  "Chicken Chapli 12": { price: 1320, type: "classic" },
+
+  "Chicken Mughlai SIX": { price: 700, type: "classic" },
+  "Chicken Mughlai 12": { price: 1320, type: "classic" },
+
+  "Veggie Delite SIX": { price: 550, type: "classic" },
+  "Veggie Delite 12": { price: 1050, type: "classic" },
+
+  "Chicken Tikka SIX": { price: 750, type: "favorites" },
+  "Chicken Tikka 12": { price: 1420, type: "favorites" },
+
+  "Chicken Fajita SIX": { price: 750, type: "favorites" },
+  "Chicken Fajita 12": { price: 1420, type: "favorites" },
+
+  "Chicken BBQ SIX": { price: 790, type: "subs" },
+  "Chicken BBQ 12": { price: 1500, type: "subs" },
+
+  "Chicken Teriyaki SIX": { price: 790, type: "subs" },
+  "Chicken Teriyaki 12": { price: 1500, type: "subs" },
+
+  "Italian B.M.T SIX": { price: 1420, type: "signatures" },
+  "Italian B.M.T 12": { price: 2690, type: "signatures" },
+
+  "Steak & Cheese SIX": { price: 1420, type: "signatures" },
+  "Steak & Cheese 12": { price: 2690, type: "signatures" },
+
+  "Turkey Breast SIX": { price: 1420, type: "signatures" },
+  "Turkey Breast 12": { price: 2690, type: "signatures" },
+
+  "Tuna Fish SIX": { price: 1420, type: "signatures" },
+  "Tuna Fish 12": { price: 2690, type: "signatures" }
+};
 
 
 window.addEventListener("load", () => {
@@ -1974,23 +2188,54 @@ function searchMenu(){
   .value
   .toLowerCase();
 
-  let cards =
-  document.querySelectorAll('.menu-card');
+  let containers =
+  document.querySelectorAll('.menu-container');
 
-  cards.forEach(card => {
+  containers.forEach(container => {
 
-    let title =
-    card.querySelector('h3')
-    .innerText
-    .toLowerCase();
+    let cards = container.querySelectorAll('.menu-card');
 
-    if(title.includes(input)){
+    let visibleCount = 0;
 
-      card.style.display = 'block';
+    cards.forEach(card => {
+
+      let title =
+      card.querySelector('h3')
+      .innerText
+      .toLowerCase();
+
+      if(title.includes(input)){
+
+        card.style.display = 'block';
+        visibleCount++;
+
+      }else{
+
+        card.style.display = 'none';
+      }
+
+    });
+
+    // section title show/hide
+    const title =
+    container.previousElementSibling;
+
+    if(visibleCount > 0){
+
+      container.style.display = 'grid';
+
+      if(title.classList.contains('sub-title')){
+        title.style.display = 'block';
+      }
 
     }else{
 
-      card.style.display = 'none';
+      container.style.display = 'none';
+
+      if(title.classList.contains('sub-title')){
+        title.style.display = 'none';
+      }
+
     }
 
   });
@@ -2027,8 +2272,7 @@ function filterMenu(category){
 
 let selectedType = '';
 let selectedSandwich = '';
-let cart = [];
-
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 function getPrice(name){
 
   const prices = {
@@ -2051,8 +2295,8 @@ function getPrice(name){
 
     // SUPER SUBS
     "Chicken BBQ SIX":790,
-    "chicken BBQ 12":1500,
-    "chicken Teriyaki SIX":790,
+    "Chicken BBQ 12":1500,
+    "Chicken Teriyaki SIX":790,
     "Chicken Teriyaki 12":1500,
 
     // SIGNATURES
@@ -2087,10 +2331,14 @@ function getPrice(name){
     "Marinda 345ml":110,
     "Nestle Peach":180,
     "Neslte Mango":180,
-    "Nestle Pineapple":180
+    "Nestle Pineapple":180,
+
+    // COOKIES
+    "Chocolate Chip": 300,
+    "Double Chocolate Chip": 300,
 
   };
-
+  
   return prices[name] || 0;
 }
 
@@ -2110,6 +2358,11 @@ function getAddonPrice(addons){
 
     if(addon === "Double Meat"){
       total += 900;
+    }
+
+    // ✅ NEW COMBO
+    if(addon === "Combo"){
+      total += 400;
     }
 
   });
@@ -2176,6 +2429,12 @@ function closeCustomizer(){
 }
 
 function addToCart(){
+
+   if(getPrice(selectedSandwich) === 0){
+    alert("Item price not found!");
+    return;
+  }
+
 
   let breads = [];
 
@@ -2279,47 +2538,80 @@ function addDrinkToCart(name){
   behavior:'smooth'
 });
 }
+
+function addCookieToCart(name){
+
+  let item = {
+
+    type: 'cookie',
+
+    sandwich: name,
+
+    breads: [],
+    salads: [],
+    sauces: [],
+    addons: [],
+
+    price: getPrice(name)
+
+  };
+
+  cart.push(item);
+
+  updateCart();
+
+  showToast();
+
+  document.getElementById('cartSection')
+  .scrollIntoView({ behavior: 'smooth' });
+
+}
+
 function updateCart(){
 
-  let cartHTML = '';
+  localStorage.setItem('cart', JSON.stringify(cart));
 
+  let cartHTML = '';
   let total = 0;
 
   cart.forEach((item, index) => {
 
+    let addonTotal = getAddonPrice(item.addons);
+    let basePrice = getPrice(item.sandwich);
+    let comboPrice = item.addons.includes("Combo") ? 400 : 0;
+
     total += item.price;
 
     cartHTML += `
-
     <div class="menu-card" style="margin-bottom:20px;">
-
       <div class="menu-content">
 
         <h3>${item.sandwich}</h3>
 
+        <p><strong>Breads:</strong> ${item.breads.join(', ') || 'None'}</p>
+        <p><strong>Salads:</strong> ${item.salads.join(', ') || 'None'}</p>
+        <p><strong>Sauces:</strong> ${item.sauces.join(', ') || 'None'}</p>
+
+        <p><strong>Add Ons:</strong> ${item.addons.join(', ') || 'None'}</p>
+
+        <p style="color:#00ff66;">
+          Add-ons Price: Rs ${addonTotal - comboPrice}
+        </p>
+
+        ${comboPrice > 0 ? `
+        <p style="color:#ffd600;">
+          Combo Price: Rs ${comboPrice}
+        </p>
+        ` : ''}
+
+        <hr style="margin:10px 0; border:1px solid #222;">
+
         <p>
-        <strong>Breads:</strong>
-        ${item.breads.join(', ') || 'None'}
+          <strong>Base Price:</strong> Rs ${basePrice}
         </p>
 
         <p>
-        <strong>Salads:</strong>
-        ${item.salads.join(', ') || 'None'}
-        </p>
-
-        <p>
-        <strong>Sauces:</strong>
-        ${item.sauces.join(', ') || 'None'}
-        </p>
-
-        <p>
-        <strong>Add Ons:</strong>
-        ${item.addons.join(', ') || 'None'}
-        </p>
-
-        <p>
-        <strong>Price:</strong>
-        Rs ${item.price}
+          <strong>Total Item Price:</strong> Rs ${item.price}
         </p>
 
         <button
@@ -2331,27 +2623,26 @@ function updateCart(){
         </button>
 
       </div>
-
     </div>
-
     `;
   });
 
   document.getElementById('cartItems').innerHTML = cartHTML;
 
   document.getElementById('cartCount').innerText = cart.length;
-
   document.getElementById('totalPrice').innerText = total;
 
   document.getElementById('mobileCartCount').innerText = cart.length;
-document.getElementById('mobileTotal').innerText = total;
+  document.getElementById('mobileTotal').innerText = total;
 
-// show only on mobile
-if(window.innerWidth <= 768){
-  document.querySelector('.mobile-cart-bar').style.display = 'flex';
-}
-}
+  const mobileBar = document.querySelector('.mobile-cart-bar');
 
+  if(window.innerWidth <= 768 && cart.length > 0){
+    mobileBar.style.display = 'flex';
+  } else {
+    mobileBar.style.display = 'none';
+  }
+}
 
 
 function openCheckout(){
@@ -2377,51 +2668,105 @@ function closeCheckout(){
 
 function sendWhatsAppOrder(){
 
-  let customerName =
-document.getElementById('customerName').value;
-
-let customerAddress =
-document.getElementById('customerAddress').value;
+  let customerName = document.getElementById('customerName').value;
+  let customerAddress = document.getElementById('customerAddress').value;
 
   if(cart.length === 0){
-
     alert('Cart is empty');
-
     return;
   }
 
   let message =
-`Hello Subway,%0A%0A
-Customer Name: ${customerName}%0A
-Address: ${customerAddress}%0A%0A`;
+`Subway Order
 
-  cart.forEach((item, index) => {
+Name: ${customerName}
+Address: ${customerAddress}
 
-  message +=
-`Item ${index + 1}%0A
-${item.type === 'salad'
-? 'Salad'
-: item.type === 'drink'
-? 'Soft Drink'
-: 'Sandwich'}: ${item.sandwich}%0A
-Breads: ${item.breads?.join(', ') || 'None'}%0A
-Salads: ${item.salads?.join(', ') || 'None'}%0A
-Sauces: ${item.sauces?.join(', ') || 'None'}%0A
-Add Ons: ${item.addons?.join(', ') || 'None'}%0A
-Price: Rs ${item.price}%0A%0A`;
-  });
+---------------------
+`;
+
+let total = 0;
+
+cart.forEach((item, index) => {
+
+  let addonTotal = getAddonPrice(item.addons);
+  let basePrice = getPrice(item.sandwich);
+  let comboPrice = item.addons.includes("Combo") ? 400 : 0;
+
+  total += item.price;
+
+  message += `
+Item ${index + 1}: ${item.sandwich}
+
+Base Price: Rs ${basePrice}
+`;
+
+  // ONLY FOR SANDWICH ITEMS
+  if(item.type !== 'drink' && item.type !== 'cookie'){
+
+    message += `
+Bread: ${item.breads?.length ? item.breads.join(', ') : 'None'}
+Salads: ${item.salads?.length ? item.salads.join(', ') : 'None'}
+Sauces: ${item.sauces?.length ? item.sauces.join(', ') : 'None'}
+`;
+  }
+
+  // ADDONS BREAKDOWN
+  if(item.addons.length > 0){
+
+    let normalAddons = item.addons.filter(a => a !== "Combo");
+
+    if(normalAddons.length > 0){
+      message += `Add-ons: ${normalAddons.join(', ')}\n`;
+      message += `Add-ons Price: Rs ${addonTotal - comboPrice}\n`;
+    }
+
+    if(item.addons.includes("Combo")){
+      message += `Combo: Cookie + Cold Drink\n`;
+      message += `Combo Price: Rs ${comboPrice}\n`;
+    }
+  }
+
+  // DRINK
+  if(item.type === 'drink'){
+    message += `Type: Drink\n`;
+  }
+
+  // COOKIE
+  if(item.type === 'cookie'){
+    message += `Type: Cookie\n`;
+  }
+
+  message += `Item Total: Rs ${item.price}\n`;
+  message += `---------------------\n`;
+});
+
+message += `TOTAL BILL: Rs ${total}`;
 
   let whatsappURL =
-`https://wa.me/923337480888?text=${message}`;
+`https://wa.me/923337480888?text=${encodeURIComponent(message)}`;
 
   window.open(whatsappURL, '_blank');
-}
+
+  cart = [];
+  updateCart();
+
+  document.getElementById('customerName').value = '';
+  document.getElementById('customerAddress').value = '';
+
+  closeCheckout();
+
+  alert('Order Sent Successfully!');
+}// ✅ FUNCTION CLOSED HERE
+
+
 
 function clearSelections(){
 
   document
   .querySelectorAll('input[type="checkbox"]')
   .forEach(item => item.checked = false);
+
 }
 
 function removeFromCart(index){
@@ -2429,7 +2774,10 @@ function removeFromCart(index){
   cart.splice(index, 1);
 
   updateCart();
+
 }
+
+updateCart();
 
 </script>
 </body>
