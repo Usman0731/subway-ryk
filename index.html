@@ -2557,6 +2557,10 @@ function openCustomizer(name, type){
 
     breadSection.style.display = 'none';
 
+     // 🔥 FORCE RESET RADIO (IMPORTANT)
+    document.querySelectorAll('.bread-options input[type="radio"]')
+      .forEach(r => r.checked = false);
+
   }else{
 
     breadSection.style.display = 'block';
@@ -2578,19 +2582,28 @@ function addToCart(){
   }
 
 
-  let bread =
+//   let bread =
+// document.querySelector('.bread-options input[type="radio"]:checked');
+
+// let breads = bread ? [bread.value] : [];
+//   // VALIDATION
+
+//   if(selectedType !== 'salad' && breads.length === 0){
+
+//     alert('Please select at least 1 bread');
+
+//     return;
+//   }
+
+let bread =
 document.querySelector('.bread-options input[type="radio"]:checked');
 
+if(!bread && selectedType !== 'salad'){
+  alert("Please select bread");
+  return;
+}
+
 let breads = bread ? [bread.value] : [];
-  // VALIDATION
-
-  if(selectedType !== 'salad' && breads.length === 0){
-
-    alert('Please select at least 1 bread');
-
-    return;
-  }
-
 
   let salads = [];
 
@@ -2910,10 +2923,13 @@ message += `TOTAL BILL: Rs ${total}`;
 
 function clearSelections(){
 
-  document
-  .querySelectorAll('input[type="checkbox"]')
-  .forEach(item => item.checked = false);
+  // checkbox reset
+  document.querySelectorAll('input[type="checkbox"]')
+    .forEach(item => item.checked = false);
 
+  // radio reset (IMPORTANT FIX)
+  document.querySelectorAll('input[type="radio"]')
+    .forEach(item => item.checked = false);
 }
 
 function removeFromCart(index){
