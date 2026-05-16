@@ -1982,15 +1982,15 @@ nav ul li a{
 
       <h3>Select Breads</h3>
 
-      <label><input type="checkbox" value="Oregano"> Oregano</label>
+      <label><input type="radio" name="bread" value="Oregano"> Oregano</label>
 
-      <label><input type="checkbox" value="Italian"> Italian</label>
+      <label><input type="radio" name="bread" value="Italian"> Italian</label>
       
-      <label><input type="checkbox" value="Sesame"> Sesame</label>
+      <label><input type="radio" name="bread" value="Sesame"> Sesame</label>
 
-      <label><input type="checkbox" value="Honey Oat"> Honey Oat</label>
+      <label><input type="radio" name="bread" value="Honey Oat"> Honey Oat</label>
       
-      <label><input type="checkbox" value="Wheat"> Wheat</label>
+      <label><input type="radio" name="bread" value="Wheat"> Wheat</label>
 
     </div>
 
@@ -2136,6 +2136,7 @@ nav ul li a{
 
 <script>
 
+  
   const menuData = {
   "Roasted Chicken SIX": { price: 700, type: "classic" },
   "Roasted Chicken 12": { price: 1320, type: "classic" },
@@ -2249,9 +2250,15 @@ function filterMenu(category){
 
   containers.forEach(container => {
 
+    const title = container.previousElementSibling;
+
     if(category === 'all'){
 
       container.style.display = 'grid';
+
+      if(title.classList.contains('sub-title')){
+        title.style.display = 'block';
+      }
 
     }
 
@@ -2259,17 +2266,25 @@ function filterMenu(category){
 
       container.style.display = 'grid';
 
+      if(title.classList.contains('sub-title')){
+        title.style.display = 'block';
+      }
+
     }
 
     else{
 
       container.style.display = 'none';
+
+      if(title.classList.contains('sub-title')){
+        title.style.display = 'none';
+      }
+
     }
 
   });
 
 }
-
 let selectedType = '';
 let selectedSandwich = '';
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -2436,13 +2451,10 @@ function addToCart(){
   }
 
 
-  let breads = [];
+  let bread =
+document.querySelector('.bread-options input[type="radio"]:checked');
 
- 
-  document
-  .querySelectorAll('.bread-options input[type="checkbox"]:checked')
-  .forEach(item => breads.push(item.value));
-
+let breads = bread ? [bread.value] : [];
   // VALIDATION
 
   if(selectedType !== 'salad' && breads.length === 0){
