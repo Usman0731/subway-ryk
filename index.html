@@ -242,6 +242,7 @@ nav ul li a:hover{
   object-fit: cover;
   object-position: center;
   display: block;
+  image-rendering:auto;
 }
     
 
@@ -561,7 +562,15 @@ nav ul{
 
     @media(max-width:768px){
 
-  .desktop-menu{
+.whatsapp{
+  bottom:85px;
+  right:15px;
+  padding:12px 18px;
+  font-size:14px;
+  z-index:999;
+}      
+
+.desktop-menu{
   display:none !important;
 }
 
@@ -627,19 +636,27 @@ nav ul{
         font-size:38px;
       }
 
-       .menu-container{
+      /* Menu */
+
+.menu{
+  padding:80px 5%;
+}
+
+.sub-title{
+  font-size:30px;
+  margin:30px 5% 15px;
+}
+
+.menu-card{
+  border-radius:16px;
+}
+
+
+.menu-container{
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:12px;
   }
 
-
-  /* .menu-card img{
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-} */
 
 .menu-card img{
   width: 100%;
@@ -650,21 +667,23 @@ nav ul{
 }
 
   .menu-content{
-  padding: 12px;
+  padding: 14px;
   }
 
   .menu-content h3{
     font-size:18px;
+    line-height:1.4;
   }
 
   .price{
-    font-size:16px;
+    font-size:15px;
     margin-bottom:12px;
   }
 
   .order-btn{
-    padding:10px;
-    font-size:15px;
+    padding:11px;
+    font-size:14px;
+    border-radius:8px;
   }
 
   /* CART MOBILE */
@@ -1850,70 +1869,52 @@ nav ul li a{
 
     </div>
 
-    <div class="menu-card">
-
-      <img src="glass.jpg" loading="lazy">
-
-      <div class="menu-content">
-
-        <h3>Nestle Peach</h3>
-
-        <span class="price">RS.180</span>
-
-        <button
-          class="order-btn"
-          onclick="addDrinkToCart('Nestle Peach')"
-        >
-        Order
-        </button>
-
-      </div>
-
-    </div>
-
-    <div class="menu-card">
-
-      <img src="glass.jpg" loading="lazy">
-
-      <div class="menu-content">
-
-        <h3>Nestle Mango</h3>
-
-        <span class="price">RS.180</span>
-
-        <button
-          class="order-btn"
-          onclick="addDrinkToCart('Neslte Mango')"
-        >
-        Order
-        </button>
-
-      </div>
-
-    </div>
-
-    <div class="menu-card">
-
-      <img src="glass.jpg" loading="lazy">
-
-      <div class="menu-content">
-
-        <h3>Nestle Pineapple</h3>
-
-        <span class="price">RS.180</span>
-
-        <button
-          class="order-btn"
-          onclick="addDrinkToCart('Nestle Pineapple')"
-        >
-        Order
-        </button>
-
-      </div>
-
-    </div>
-
   </div>
+
+    <!-- JUICES SECTION -->
+<h4 style="color:#00ff66; font-size:32px; margin:40px 8% 20px;">
+  Juices
+</h4>
+
+<div class="menu-container juices">
+
+  <div class="menu-card">
+    <img src="glass.jpg" loading="lazy">
+    <div class="menu-content">
+      <h3>Mango</h3>
+      <span class="price">Rs.180</span>
+      <button class="order-btn" onclick="addDrinkToCart('Mango')">Order</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="glass.jpg" loading="lazy">
+    <div class="menu-content">
+      <h3>Peach</h3>
+      <span class="price">Rs.180</span>
+      <button class="order-btn" onclick="addDrinkToCart('Peach')">Order</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="glass.jpg" loading="lazy">
+    <div class="menu-content">
+      <h3>Pineapple</h3>
+      <span class="price">Rs.180</span>
+      <button class="order-btn" onclick="addDrinkToCart('Pineapple')">Order</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="glass.jpg" loading="lazy">
+    <div class="menu-content">
+      <h3>Lemon</h3>
+      <span class="price">Rs.180</span>
+      <button class="order-btn" onclick="addDrinkToCart('Lemon')">Order</button>
+    </div>
+  </div>
+
+</div>
   <!-- Cookies -->
  
   <h3 class="sub-title">Cookies</h3>
@@ -1990,6 +1991,8 @@ nav ul li a{
   </h2>
 </div>
 
+<p id="minOrderMsg" style="color:#ffd600; margin-top:10px;"></p>
+
 
   <button
   class="confirm-btn"
@@ -2000,6 +2003,8 @@ nav ul li a{
 </button>
 
 </section>
+
+
 
 <!-- CHECKOUT MODAL -->
 
@@ -2142,7 +2147,7 @@ nav ul li a{
 
       <label><input type="checkbox" value="Olives"> Olives</label>
 
-      <label><input type="checkbox" value="Capsicums"> Capsicums</label>
+      <label><input type="checkbox" value="Capsicums"> Capsicum</label>
 
     </div>
 
@@ -2152,7 +2157,7 @@ nav ul li a{
 
       <h3>Select Sauce</h3>
 
-      <label><input type="checkbox"  value="Ketchap"> Ketchup</label>
+      <label><input type="checkbox"  value="Ketchup"> Ketchup</label>
 
       <label><input type="checkbox"  value="Mustard"> Mustard</label>
 
@@ -2471,9 +2476,15 @@ function getPrice(name){
     "Zero Pepsi 250ml":125,
     "Dew 345ml":110,
     "Marinda 345ml":110,
-    "Nestle Peach":180,
-    "Neslte Mango":180,
-    "Nestle Pineapple":180,
+    // "Peach":180,
+    // "Mango":180,
+    // "Pineapple":180,
+
+    // JUICES
+    "Mango": 180,
+    "Peach": 180,
+    "Pineapple": 180,
+    "Lemon": 180,
 
     // COOKIES
     "Chocolate Chip": 300,
@@ -2726,6 +2737,16 @@ function updateCart(){
   let cartHTML = '';
   let total = 0;
 
+  // 👇 YAHAN ADD KARO
+const minOrder = 700;
+
+if(total < minOrder){
+  document.getElementById('minOrderMsg').innerText =
+    `⚠ Minimum order Rs ${minOrder}.`;
+} else {
+  document.getElementById('minOrderMsg').innerText = "";
+}
+
   cart.forEach((item, index) => {
 
     let addonTotal = getAddonPrice(item.addons);
@@ -2934,9 +2955,25 @@ function clearSelections(){
 
 function removeFromCart(index){
 
-  cart.splice(index, 1);
+  const cards =
+  document.querySelectorAll('#cartItems .menu-card');
 
-  updateCart();
+  // animation
+  cards[index].style.opacity = '0';
+
+  cards[index].style.transform =
+  'translateX(60px)';
+
+  cards[index].style.transition =
+  '0.3s ease';
+
+  setTimeout(() => {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+  }, 300);
 
 }
 
