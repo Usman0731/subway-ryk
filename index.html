@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -28,7 +29,7 @@
       font-family: 'Montserrat', sans-serif !important;
     }
 
-    nav{
+    /* nav{
   width:100%;
   background:#fff;
   padding:10px 8%;
@@ -39,6 +40,20 @@
   top:0;
   z-index:1000;
   border-bottom:3px solid #00c853;
+} */
+
+nav{
+  width:100%;
+  background:#fff;
+  padding:12px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  border-bottom:3px solid #00A651;
 }
 
 .desktop-menu{
@@ -57,7 +72,7 @@
 }
 
 .desktop-menu li a:hover{
-  color:#00c853;
+  color:#00ff66;;
 }
 
 .hamburger{
@@ -66,18 +81,34 @@
 
    
 
-.logo{
+/* .logo{
   font-size:34px;
-  font-weight:1000;
+  font-weight:900;
   font-family:'Montserrat', sans-serif;
   color:#ffd600;
-  letter-spacing:0px;   /* 👈 spacing remove */
-  transform:scaleX(1.05); /* thora sa stretch (optional) */
+  letter-spacing:1px;   /* 👈 spacing remove */
+  /* transform:scaleX(1.05); /* thora sa stretch (optional) */
+  /* text-transform: uppercase; */ 
+/* }  */
+
+/* .logo span{
+  color:#00A651;;; WAY = green
+  
+} */
+
+ .logo{
+  display:flex;
+  align-items:center;
+  height:55px;
 }
 
-.logo span{
-  color:#00c853; /* WAY = green */
+.logo img{
+  height:85px;
+  width:auto;
+  display:block;
+  object-fit:contain;
 }
+
 
     nav ul{
       display:flex;
@@ -85,27 +116,18 @@
       gap:30px;
     }
 
-    /* nav ul li a{
-      text-decoration:none;
-      color:white;
-      font-size:18px;
-      transition:0.3s;
-    }
-
-    nav ul li a:hover{
-      color:#00ff66;
-    } */
-
     nav ul li a{
   text-decoration:none;
   color:#111;
   font-size:18px;
   transition:0.3s;
 }
+  nav ul li a:hover{
+      color:#00ff66;
+      
+    }
+    
 
-nav ul li a:hover{
-  color:#00c853;
-}
 
 
     /* HERO */
@@ -128,12 +150,13 @@ nav ul li a:hover{
       font-size:70px;
       margin-bottom:20px;
       font-family: 'Montserrat', sans-serif;
-  font-weight:800;
-  letter-spacing:2px;
+      font-weight:800;
+      letter-spacing:2px;
     }
 
     .hero-content span{
       color:#00ff66;
+      
     }
 
     .hero-content p{
@@ -219,22 +242,12 @@ nav ul li a:hover{
       overflow:hidden;
       transition:0.3s;
       border:1px solid #222;
-      /* display: flex;
-      flex-direction: column;
-      height: 100%; */
     }
 
     .menu-card:hover{
       transform:translateY(-10px);
     }
 
-    /* .menu-card img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center;
-  border-bottom: 1px solid #222;
-} */
 
    .menu-card img{
   width: 100%;
@@ -562,6 +575,11 @@ nav ul{
 
     @media(max-width:768px){
 
+ .logo img{
+    height:85px;
+  }
+      
+
 .whatsapp{
   bottom:85px;
   right:15px;
@@ -599,7 +617,8 @@ nav ul{
       bottom:0;
       left:0;
       width:100%;
-      background:#00ff66;
+      /* background:#00ff66; */
+      background:#00a651 ;
       color:black;
       padding:14px;
       display:none;
@@ -846,7 +865,11 @@ nav ul li a{
 
 <nav>
 
-  <div class="logo">SUB<span>WAY</span></div>
+  <!-- <div class="logo">SUB<span>WAY</span></div> -->
+
+  <div class="logo">
+  <img src="subway-logo.png" alt="Subway Logo">
+  </div>
 
   <ul class="desktop-menu">
   <li><a href="#home">Home</a></li>
@@ -2226,9 +2249,11 @@ nav ul li a{
 
   <h2>Contact Us</h2>
 
-  <p>📍 Rahim Yar Khan, Punjab, Pakistan</p>
+  <p>📍 Club Road Businessman Colony , Punjab, Pakistan</p>
 
   <p>📞 +92 3211782929</p>
+  <p>📞 068 5888188</p>
+
 
   <p>📧 subwayryk@gmail.com</p>
 
@@ -2737,15 +2762,7 @@ function updateCart(){
   let cartHTML = '';
   let total = 0;
 
-  // 👇 YAHAN ADD KARO
-const minOrder = 700;
 
-if(total < minOrder){
-  document.getElementById('minOrderMsg').innerText =
-    `⚠ Minimum order Rs ${minOrder}.`;
-} else {
-  document.getElementById('minOrderMsg').innerText = "";
-}
 
   cart.forEach((item, index) => {
 
@@ -2800,6 +2817,16 @@ if(total < minOrder){
     `;
   });
 
+    // 👇 YAHAN ADD KARO
+const minOrder = 500;
+
+if(total < minOrder){
+  document.getElementById('minOrderMsg').innerText =
+    `⚠ Minimum order Rs ${minOrder}.`;
+} else {
+  document.getElementById('minOrderMsg').innerText = "";
+}
+
   document.getElementById('cartItems').innerHTML = cartHTML;
 
   document.getElementById('cartCount').innerText = cart.length;
@@ -2823,10 +2850,27 @@ function openCheckout(){
   if(cart.length === 0){
 
     alert('Cart is empty');
+    return;
+  }
+
+  // TOTAL CALCULATE
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price;
+  });
+
+  // MINIMUM ORDER CHECK
+  const minOrder = 500;
+
+  if(total < minOrder){
+
+    alert(`Minimum order is Rs ${minOrder}`);
 
     return;
   }
 
+  // OPEN CHECKOUT
   document.getElementById('checkoutModal').style.display = 'flex';
 
   document.body.style.overflow = 'hidden';
