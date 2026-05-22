@@ -29,10 +29,10 @@
       font-family: 'Montserrat', sans-serif !important;
     }
 
-    /* nav{
+    nav{
   width:100%;
   background:#fff;
-  padding:10px 8%;
+  padding: 30px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -40,21 +40,8 @@
   top:0;
   z-index:1000;
   border-bottom:3px solid #00c853;
-} */
-
-nav{
-  width:100%;
-  background:#fff;
-  padding:12px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:1000;
-  border-bottom:3px solid #00A651;
 }
+
 
 .desktop-menu{
   display:flex;
@@ -79,6 +66,14 @@ nav{
   display:none;
 }
 
+.logo {
+  position: fixed;
+  height: auto;
+  left: 10px;
+  width: 250px;
+
+}
+
    
 
 /* .logo{
@@ -86,28 +81,15 @@ nav{
   font-weight:900;
   font-family:'Montserrat', sans-serif;
   color:#ffd600;
-  letter-spacing:1px;   /* 👈 spacing remove */
-  /* transform:scaleX(1.05); /* thora sa stretch (optional) */
-  /* text-transform: uppercase; */ 
-/* }  */
+  letter-spacing:1px;   
+  transform:scaleX(1.05); 
+  text-transform: uppercase; 
+}  */
 
 /* .logo span{
   color:#00A651;;; WAY = green
   
 } */
-
- .logo{
-  display:flex;
-  align-items:center;
-  height:55px;
-}
-
-.logo img{
-  height:85px;
-  width:auto;
-  display:block;
-  object-fit:contain;
-}
 
 
     nav ul{
@@ -127,10 +109,7 @@ nav{
       
     }
     
-
-
-
-    /* HERO */
+           /* HERO */
 
     .hero{
       height:100vh;
@@ -261,10 +240,6 @@ nav{
 
     .menu-content{
       padding:20px;
-      /* flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; */
     }
 
     .menu-content h3{
@@ -575,11 +550,7 @@ nav ul{
 
     @media(max-width:768px){
 
- .logo img{
-    height:85px;
-  }
       
-
 .whatsapp{
   bottom:85px;
   right:15px;
@@ -592,6 +563,8 @@ nav ul{
   display:none !important;
 }
 
+
+
 .hamburger{
   display:block;
 }    
@@ -600,16 +573,28 @@ nav ul{
   display:none;
 }
 
-  .bag-icon{
+  /* .bag-icon{
     width:18px;
     height:18px;
-  }
+  } */
 
-  .cart-icon span{
+  .bag-icon{
+  width:22px;
+  height:22px;
+}
+
+
+  /* .cart-icon span{
     width:16px;
     height:16px;
     font-size:10px;
-  }
+  } */
+
+  .cart-icon span{
+  top:-7px;
+  right:-8px;
+}
+
   
 
     .mobile-cart-bar{
@@ -630,11 +615,40 @@ nav ul{
       box-shadow:0 -5px 20px rgba(0,0,0,0.3);
     }
 
-      nav{
+      /* nav{
         padding:10px 5%;
         flex-direction:row;
-        /* gap:20px; */
         justify-content: space-between;
+      } */
+
+      nav{
+       padding:5px 2%;
+       min-height:50px;
+       display:flex;
+       align-items:center;
+       justify-content:space-between;
+       /* flex-wrap:nowrap; */
+      }
+
+      .logo{
+       width:170px;
+       height:auto;
+       position:static;
+       display:block;
+      }
+
+      .cart-icon{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+      .nav-right{
+       display:flex;
+       align-items:center;
+       gap:16px;
+       margin-left:auto;
       }
 
       nav ul{
@@ -747,10 +761,10 @@ nav ul{
 
 /* NAVBAR MOBILE */
 
-nav{
+/* nav{
   padding:15px 5%;
   min-height:60px;
-}
+} */
 
 nav ul{
   gap:10px;
@@ -758,12 +772,11 @@ nav ul{
   justify-content:center;
 }
 
-.logo{
+/* .logo{
    font-size:22px;
   font-weight:1000;
-  /* transform:scaleX(1.1); */
   letter-spacing:0px;
-}
+} */
 
 nav ul li a{
   font-size:15px;
@@ -794,10 +807,18 @@ nav ul li a{
 }
 
 /* HAMBURGER */
-.hamburger{
+/* .hamburger{
   font-size:28px;
   cursor:pointer;
   color:#111;
+} */
+
+.hamburger{
+  display:block;
+  font-size:30px;
+  color:#111;
+  cursor:pointer;
+  line-height:1;
 }
 
 /* SIDE MENU */
@@ -867,9 +888,7 @@ nav ul li a{
 
   <!-- <div class="logo">SUB<span>WAY</span></div> -->
 
-  <div class="logo">
-  <img src="subway-logo.png" alt="Subway Logo">
-  </div>
+  <img src="subway-logo.png" class="logo">
 
   <ul class="desktop-menu">
   <li><a href="#home">Home</a></li>
