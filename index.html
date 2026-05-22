@@ -10,72 +10,122 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-        font-family: 'Poppins', sans-serif !important;
-    }
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family: 'Poppins', sans-serif !important;
+  }
 
-    h1, h2, h3{
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-    }
+  h1, h2, h3{
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  }
 
-    body{
-      background:#0d0d0d;
-      color:white;
-      font-family: 'Montserrat', sans-serif !important;
-    }
+  body{
+    background:#0d0d0d;
+    color:white;
+    font-family: 'Montserrat', sans-serif !important;
+  }
 
-    nav{
-  width:100%;
-  background:#fff;
-  padding: 30px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:fixed;
-  top:0;
-  z-index:1000;
-  border-bottom:3px solid #00c853;
-}
+  nav{
+    width:100%;
+    background:#fff;
+    padding: 30px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    border-bottom:3px solid #00c853;
+  }
+
+  nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+    margin-right: 20px;
+  }
+
+  nav ul li a{
+    text-decoration:none;
+    color:#111;
+    font-size:18px;
+    transition:0.3s;
+  }
+  nav ul li a:hover{
+    color:#00ff66;
+      
+  }
+
+  .cart-icon{
+    position:relative;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:#111;
+  }
+
+  .bag-icon{
+   width:22px;
+   height:22px;
+   fill:#111;
+  }
+
+  .cart-icon span{
+   position:absolute;
+   top:-6px;
+   right:-10px;
+   background:#00c853;
+   color:#fff;
+   font-size:11px;
+   width:18px;
+  height:18px;
+   border-radius:50%;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   font-weight:bold;
+  }
+
+  nav ul{
+   display:flex !important;
+ }
 
 
-.desktop-menu{
-  display:flex;
-  list-style:none;
-  gap:30px;
-  margin-left:auto;
-  margin-right:30px;
-}
+  .desktop-menu{
+    display:flex;
+    list-style:none;
+    gap:30px;
+    margin-left:auto;
+    margin-right:30px;
+  }
 
-.desktop-menu li a{
-  text-decoration:none;
-  color:#111;
-  font-size:18px;
-  transition:0.3s;
-}
+  .desktop-menu li a{
+    text-decoration:none;
+    color:#111;
+    font-size:18px;
+    transition:0.3s;
+  }
 
-.desktop-menu li a:hover{
-  color:#00ff66;;
-}
+  .desktop-menu li a:hover{
+    color:#00ff66;;
+  }
 
-.hamburger{
-  display:none;
-}
+ .hamburger{
+    display:none;
+  }
 
-.logo {
-  position: fixed;
-  height: auto;
-  left: 10px;
-  width: 250px;
-
-}
+ .logo {
+   position: fixed;
+   height: auto;
+   left: 10px;
+   width: 250px;
+  }
 
    
-
 /* .logo{
   font-size:34px;
   font-weight:900;
@@ -92,22 +142,7 @@
 } */
 
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:30px;
-    }
-
-    nav ul li a{
-  text-decoration:none;
-  color:#111;
-  font-size:18px;
-  transition:0.3s;
-}
-  nav ul li a:hover{
-      color:#00ff66;
-      
-    }
+   
     
            /* HERO */
 
@@ -510,39 +545,7 @@
     opacity:1;
   }
 }
-  .cart-icon{
-  position:relative;
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-  color:#111;
-}
-
-.bag-icon{
-  width:22px;
-  height:22px;
-  fill:#111;
-}
-
-.cart-icon span{
-  position:absolute;
-  top:-6px;
-  right:-10px;
-  background:#00c853;
-  color:#fff;
-  font-size:11px;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-}
-
-nav ul{
-  display:flex !important;
-}
+  
 
 
 
@@ -573,47 +576,34 @@ nav ul{
   display:none;
 }
 
-  /* .bag-icon{
-    width:18px;
-    height:18px;
-  } */
-
-  .bag-icon{
+.bag-icon{
   width:22px;
   height:22px;
 }
 
 
-  /* .cart-icon span{
-    width:16px;
-    height:16px;
-    font-size:10px;
-  } */
-
-  .cart-icon span{
+.cart-icon span{
   top:-7px;
   right:-8px;
 }
 
-  
-
-    .mobile-cart-bar{
-      position:fixed;
-      bottom:0;
-      left:0;
-      width:100%;
-      /* background:#00ff66; */
-      background:#00a651 ;
-      color:black;
-      padding:14px;
-      display:none;
-      justify-content:space-between;
-      align-items:center;
-      font-weight:bold;
-      font-size:16px;
-      z-index:9999;
-      box-shadow:0 -5px 20px rgba(0,0,0,0.3);
-    }
+.mobile-cart-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  /* background:#00ff66; */
+  background:#00a651 ;
+  color:black;
+  padding:14px;
+  display:none;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
+  font-size:16px;
+  z-index:9999;
+  box-shadow:0 -5px 20px rgba(0,0,0,0.3);
+  }
 
       /* nav{
         padding:10px 5%;
@@ -622,27 +612,29 @@ nav ul{
       } */
 
       nav{
-       padding:5px 2%;
-       min-height:50px;
+       padding:0px 2%;
+       /* min-height:10px; */
        display:flex;
        align-items:center;
        justify-content:space-between;
        /* flex-wrap:nowrap; */
+       height: 100px;
       }
 
       .logo{
-       width:170px;
+       width:260px;
        height:auto;
        position:static;
        display:block;
+       margin-left: 1px;
       }
 
       .cart-icon{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+     }
 
       .nav-right{
        display:flex;
@@ -652,23 +644,24 @@ nav ul{
        margin-right: 10px;
       }
 
-      nav ul{
-        gap:15px;
-      }
-
       .hero-content h1{
         font-size:45px;
-      }
+    }
 
-      .hero-content p{
-        font-size:18px;
-      }
+    .hero-content p{
+      font-size:18px;
+    }
 
-      .section-title,
-      .about-text h2,
-      .contact h2{
-        font-size:38px;
-      }
+    .section-title,
+    .about-text h2,
+    .contact h2{
+      font-size:38px;
+    }
+
+    .hero {
+     margin-top: 50px;
+
+    }
 
       /* Menu */
 
@@ -762,26 +755,6 @@ nav ul{
 
 /* NAVBAR MOBILE */
 
-/* nav{
-  padding:15px 5%;
-  min-height:60px;
-} */
-
-nav ul{
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-/* .logo{
-   font-size:22px;
-  font-weight:1000;
-  letter-spacing:0px;
-} */
-
-nav ul li a{
-  font-size:15px;
-}
 
 /* HERO MOBILE */
 
